@@ -1,0 +1,165 @@
+.common-layout {
+    height: 100vh;
+    display: flex;
+
+    margin: 0;
+    overflow: hidden;
+}
+/*
+.style_h2 {
+    margin: 0;
+
+} */
+
+
+
+/* .infobar {
+    display: flex;
+} */
+
+.card-show {
+    margin: 5px 5px 5px 0;
+}
+
+.maincontent {
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+}
+
+/* .header {
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    background: linear-gradient(to bottom right, rgba(95, 165, 200, 0.949), rgba(38, 117, 213, 0.73));
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .2);
+} */
+
+.el-carousel__item h3 {
+    color: #475669;
+    opacity: 0.75;
+    line-height: 200px;
+    margin: 0;
+    text-align: center;
+}
+
+.el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n + 1) {
+    background-color: #d3dce6;
+}
+
+
+/* .main {
+
+    margin-top: 60px;
+    flex: 1;
+    position: relative;
+    overflow-y: auto;
+    background-color: #f0f0f0;
+    --el-main-padding: 0;
+    background-image: url("background/leaves.png");
+
+} */
+
+
+
+
+
+.footer {
+    height: 40px;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 40px;
+
+    bottom: 0;
+}
+.bodyclearfix
+{
+    display: block;
+}
+.boxL
+{
+    float: left;
+    display: inline;
+    width: 392px;
+    overflow: hidden;
+    margin: 0;
+    padding: 20px 2px;
+
+}
+.boxR
+{
+    float: right;
+    display: inline;
+    width: 1020px;
+    overflow: hidden;
+    margin: 0;
+    padding: 20px 2px;
+
+
+}
+.boxLcontent
+{
+    text-align: center;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: var(--el-box-shadow-lighter);
+    padding: 20px;
+
+
+}
+
+@media screen and (max-width: 1600px) {
+    .maincontent{width:1200px}
+    .boxL{width:327px }
+    .boxR{width:850px}}
+.imgcard
+{
+    height: 110px;
+    width: 110px;
+    overflow: hidden;
+    margin: 0 auto;
+
+    border-radius: 70px;
+}
+.iscenter
+{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.infodata
+{
+    display:flex ;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.infoname{
+    font-weight: 500;
+    font-size: 1.57em;
+
+}
+.dataname
+{
+    font-size: 20px;
+    margin: 0 20px ;
+}
+a{
+    color: inherit;
+    text-decoration:none;
+
+
+
+}
+a:hover{
+    color: #49b1f5;;
+}
+
