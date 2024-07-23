@@ -5,21 +5,17 @@
     margin: 0;
     overflow: hidden;
 }
-
+/*
 .style_h2 {
     margin: 0;
 
-}
+} */
 
 
-::-webkit-scrollbar {
-    display: none;
-    /* Chrome Safari */
-}
 
-.infobar {
+/* .infobar {
     display: flex;
-}
+} */
 
 .card-show {
     margin: 5px 5px 5px 0;
@@ -32,7 +28,7 @@
     position: relative;
 }
 
-.header {
+/* .header {
 
     position: fixed;
     width: 100%;
@@ -41,9 +37,9 @@
     text-align: center;
     height: 60px;
     line-height: 60px;
-    /* background: linear-gradient(to bottom right, rgba(95, 165, 200, 0.949), rgba(38, 117, 213, 0.73)); */
+    background: linear-gradient(to bottom right, rgba(95, 165, 200, 0.949), rgba(38, 117, 213, 0.73));
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .2);
-}
+} */
 
 .el-carousel__item h3 {
     color: #475669;
@@ -62,7 +58,7 @@
 }
 
 
-.main {
+/* .main {
 
     margin-top: 60px;
     flex: 1;
@@ -72,15 +68,11 @@
     --el-main-padding: 0;
     background-image: url("background/leaves.png");
 
-}
+} */
 
 
 
-.headerinside {
-    display: flex;
-    justify-content: space-between;
 
-}
 
 .footer {
     height: 40px;
@@ -114,16 +106,15 @@
     padding: 20px 2px;
 
 
-
 }
-.avacontent
+.boxLcontent
 {
     text-align: center;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: var(--el-box-shadow-lighter);
     padding: 20px;
-   
+
 
 }
 
@@ -164,7 +155,11 @@
 a{
     color: inherit;
     text-decoration:none;
+
+
+
 }
 a:hover{
     color: #49b1f5;;
 }
+
