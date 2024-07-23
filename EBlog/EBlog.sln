@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBlog.Domain", "EBlog.Domain\EBlog.Domain.csproj", "{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBlog.WebApi", "EBlog.WebApi\EBlog.WebApi.csproj", "{27D383DF-7B87-4554-8B36-F1E106EC7C12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27D383DF-7B87-4554-8B36-F1E106EC7C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27D383DF-7B87-4554-8B36-F1E106EC7C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27D383DF-7B87-4554-8B36-F1E106EC7C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27D383DF-7B87-4554-8B36-F1E106EC7C12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5C6760E-A243-4499-82AA-A028E161B34B}
+	EndGlobalSection
+EndGlobal

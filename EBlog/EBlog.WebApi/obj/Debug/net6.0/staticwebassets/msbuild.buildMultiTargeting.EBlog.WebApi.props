@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\EBlog.WebApi.props" />
+</Project>

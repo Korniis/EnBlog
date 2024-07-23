@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "UXWV18SsiOw1Zq3mruep0KkjN+SSiyZa32cG0OKWFq0=",
+  "Source": "EBlog.WebApi",
+  "BasePath": "_content/EBlog.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
