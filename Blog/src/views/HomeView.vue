@@ -3,7 +3,7 @@
         <el-container>
 
 
-<el-main>
+            <el-main>
                 <div class="maincontent">
                     <el-carousel style="border-radius: 10px; margin-top: 10px" height="300px" direction="vertical"
                         motion-blur :autoplay="true">
@@ -104,32 +104,7 @@ let pageData = reactive({
     psgTagNum: user_store.psgTagNum,
     psgSortNum: user_store.psgSortNum,
 
-    psgArt: [
-        {
-            num: 1,
-            title: "无题",
-            datetime: "2022-12-01T14:10:23.280Z",
-            content: "LeetCode精选数据库70题题解577-员工奖金577. 员工奖金123456# Write your MySQL query statement belowselect name, bonusfrom employee e left join bonus b on e.empId =b.empIdwhere b.bonus is null or b.bonus &lt; 1000;",
-            imgsrc: "../../artimg/image.png"
-        },
-        {
-            num: 1,
-            title: "无题",
-            datetime: "2022-12-01T14:10:23.280Z",
-            content: "LeetCode精选数据库70题题解577-员工奖金577. 员工奖金123456# Write your MySQL query statement belowselect name, bonusfrom employee e left join bonus b on e.empId =b.empIdwhere b.bonus is null or b.bonus &lt; 1000;",
-            imgsrc: "../../artimg/image.png"
-        },
 
-        {
-            num: 1,
-            title: "无题",
-            datetime: "2022-12-01T14:10:23.280Z",
-            content: "LeetCode精选数据库70题题解577-员工奖金577. 员工奖金123456# Write your MySQL query statement belowselect name, bonusfrom employee e left join bonus b on e.empId =b.empIdwhere b.bonus is null or b.bonus &lt; 1000;",
-            imgsrc: "../../artimg/image.png"
-        }
-
-
-    ]
 });
 
 
@@ -141,9 +116,10 @@ onMounted(() => {
 
     //头部header变色
 
-    axios.get('/api/Test/GetPageInfo').then(res => { console.log(res.data)
-        pageData.psgArt=res.data;
-     }).catch(err => {
+    axios.get('/api/Test/GetPageInfo').then(res => {
+        console.log(res.data)
+        pageData.psgArt = res.data;
+    }).catch(err => {
         console.log(err);
     })
 

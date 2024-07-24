@@ -11,7 +11,10 @@
 
 } */
 
-
+.el-main
+{
+    --el-main-padding: 20px;
+}
 
 /* .infobar {
     display: flex;

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,7 +42,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "TestController.cs",
+              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Controllers\\TestController.cs",
+              "RelativeDocumentMoniker": "EBlog.WebApi\\Controllers\\TestController.cs",
+              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Controllers\\TestController.cs",
+              "RelativeToolTip": "EBlog.WebApi\\Controllers\\TestController.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T02:06:47.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "DbContextDesignTimeFactory.cs",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\DbContextDesignTimeFactory.cs",
               "RelativeDocumentMoniker": "EBlog.Domain\\DbContextDesignTimeFactory.cs",
@@ -46,25 +63,24 @@
               "RelativeToolTip": "EBlog.Domain\\DbContextDesignTimeFactory.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T08:34:51.245Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-23T08:34:51.245Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Program.cs",
               "RelativeDocumentMoniker": "EBlog.WebApi\\Program.cs",
               "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Program.cs",
               "RelativeToolTip": "EBlog.WebApi\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T08:34:47.837Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\appsettings.Development.json",
               "RelativeDocumentMoniker": "EBlog.WebApi\\appsettings.Development.json",
@@ -72,12 +88,11 @@
               "RelativeToolTip": "EBlog.WebApi\\appsettings.Development.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-23T08:34:46.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-23T08:34:46.737Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\appsettings.json",
               "RelativeDocumentMoniker": "EBlog.WebApi\\appsettings.json",
@@ -85,8 +100,7 @@
               "RelativeToolTip": "EBlog.WebApi\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-23T08:34:44.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-23T08:34:44.063Z"
             }
           ]
         }

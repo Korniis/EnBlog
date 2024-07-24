@@ -1,0 +1,78 @@
+
+.bodyclearfix
+{
+    display: block;
+
+}
+.atrticlemain
+{
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+}
+.boxR
+{
+    float: right;
+    display: inline;
+    width: 1020px;
+    overflow: hidden;
+    margin: 0;
+    padding: 20px 2px;
+
+
+}
+.boxLcontent
+{
+    text-align: center;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: var(--el-box-shadow-lighter);
+    padding: 20px;
+
+
+}
+.boxL
+{
+    float: left;
+    display: inline;
+    width: 392px;
+    overflow: hidden;
+    margin: 0;
+    padding: 20px 2px;
+
+}
+@media screen and (max-width: 1600px) {
+    .atrticlemain{width:1200px}
+    .boxL{width:327px }
+    .boxR{width:850px}}
+    .imgcard
+{
+    height: 110px;
+    width: 110px;
+    overflow: hidden;
+    margin: 0 auto;
+
+    border-radius: 70px;
+}
+.iscenter
+{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.infodata
+{
+    display:flex ;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.infoname{
+    font-weight: 500;
+    font-size: 1.57em;
+
+}
+.dataname
+{
+    font-size: 20px;
+    margin: 0 20px ;
+}
