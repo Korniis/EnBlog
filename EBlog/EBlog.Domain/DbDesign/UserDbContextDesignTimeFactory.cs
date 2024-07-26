@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System;
@@ -9,18 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EBlog.Domain
+namespace EBlog.Domain.DbDesign
 {
-    internal class DbContextDesignTimeFactory : IDesignTimeDbContextFactory<MyDbContext>
+    public class UserDbContextDesignTimeFactory : IDesignTimeDbContextFactory<UserDbContext>
     {
-        public MyDbContext CreateDbContext(string[] args)
+        public UserDbContext CreateDbContext(string[] args)
         {
-            DbContextOptionsBuilder<MyDbContext> builder = new DbContextOptionsBuilder<MyDbContext>();
+            DbContextOptionsBuilder<UserDbContext> builder = new DbContextOptionsBuilder<UserDbContext>();
 
 
-            string jsonfile = "DbSettings.json";
+            string jsonfile = "DbSettings.json ";
             string connStr = "";
-            using (System.IO.StreamReader file = System.IO.File.OpenText(jsonfile))
+            using (StreamReader file = File.OpenText(jsonfile))
             {
                 using (JsonTextReader reader = new JsonTextReader(file))
                 {
@@ -30,7 +29,7 @@ namespace EBlog.Domain
             }
             builder.UseMySql(connStr, new MySqlServerVersion(new Version(8, 6, 20)));
 
-            return new MyDbContext(builder.Options);
+            return new UserDbContext(builder.Options);
 
         }
     }

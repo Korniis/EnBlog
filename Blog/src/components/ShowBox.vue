@@ -17,7 +17,7 @@
             <slot name="articlenum"></slot>
           </a><span class="article-meta-label"> 条评论</span></span></div>
       <div class="content">
-        <slot name="artcontent"></slot>
+        <slot  name="artcontent"></slot>
       </div>
     </div>
     <div class="img-content">
@@ -36,11 +36,16 @@ let propsData = defineProps(['imgsrc'])
 </script>
 <style>
 .article-title {
-  font-size: 1.72em;
+  font-size: 1.42em;
   color: #1f2d3d;
   text-decoration: none;
-}
 
+margin:  20px 0 ;
+}
+.article-title:hover
+{
+  color: #49b1f5;;
+}
 .showcontent {
   margin-bottom: 20px;
   background-color: white;
@@ -55,7 +60,9 @@ let propsData = defineProps(['imgsrc'])
 
 .article-content {
   padding: 0 40px;
+  display: flex;
   width: 57%;
+  flex-direction: column;
 }
 
 .img-content {

@@ -121,10 +121,7 @@
 
 }
 
-@media screen and (max-width: 1600px) {
-    .maincontent{width:1200px}
-    .boxL{width:327px }
-    .boxR{width:850px}}
+
 .imgcard
 {
     height: 110px;
@@ -166,3 +163,7 @@ a:hover{
     color: #49b1f5;;
 }
 
+@media screen and (max-width: 1600px) {
+    .maincontent{width:1200px}
+    .boxL{width:327px }
+    .boxR{width:850px}}

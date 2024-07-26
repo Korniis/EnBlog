@@ -66,7 +66,7 @@
                                         <template #articlenum>
                                             {{ item.num }}
                                         </template> <template #artcontent>
-                                            {{ item.content }}
+                                            <span v-html="item.content"></span>
                                         </template>
                                     </show-box>
                                 </div>
@@ -89,7 +89,8 @@ import ShowBox from '../components/ShowBox.vue';
 import { useUserStore } from '@/stores/counter';
 import { storeToRefs } from 'pinia';
 
-import axios from 'axios';
+import  axios  from 'axios';
+
 import { dataType } from 'element-plus/es/components/table-v2/src/common';
 
 const user_store = useUserStore()
@@ -116,7 +117,7 @@ onMounted(() => {
 
     //头部header变色
 
-    axios.get('/api/Test/GetPageInfo').then(res => {
+    axios.get('/api/Home/GetPageInfo').then(res => {
         console.log(res.data)
         pageData.psgArt = res.data;
     }).catch(err => {
