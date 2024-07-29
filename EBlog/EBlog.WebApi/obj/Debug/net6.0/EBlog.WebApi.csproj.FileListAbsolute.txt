@@ -103,3 +103,5 @@ D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll

@@ -4,7 +4,7 @@
 
   <div class="showcontent">
     <div class="article-content">
-      <a class="article-title" href="/0/">
+      <a class="article-title" :href="`/ContentPage/${psgid}`">
         <slot name="article-title"></slot>
       </a>
       <div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span
@@ -12,12 +12,13 @@
           <slot name="articletime"></slot>
         </span>
         <span class="article-meta">
-          <span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count"
-            href="/0/#post-comment">
+          <i></i> <span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count"
+            href="">
             <slot name="articlenum"></slot>
-          </a><span class="article-meta-label"> 条评论</span></span></div>
+          </a><span class="article-meta-label"> 人看过</span></span>
+      </div>
       <div class="content">
-        <slot  name="artcontent"></slot>
+        <slot name="artcontent"></slot>
       </div>
     </div>
     <div class="img-content">
@@ -31,7 +32,7 @@
 <script setup>
 import { ElImage } from 'element-plus';
 
-let propsData = defineProps(['imgsrc'])
+let propsData = defineProps(['imgsrc', "psgid"])
 
 </script>
 <style>
@@ -40,12 +41,14 @@ let propsData = defineProps(['imgsrc'])
   color: #1f2d3d;
   text-decoration: none;
 
-margin:  20px 0 ;
+  margin: 20px 0;
 }
-.article-title:hover
-{
-  color: #49b1f5;;
+
+.article-title:hover {
+  color: #49b1f5;
+  ;
 }
+
 .showcontent {
   margin-bottom: 20px;
   background-color: white;
@@ -84,14 +87,14 @@ margin:  20px 0 ;
   transition-duration: 1s;
   transform: scale(1.1);
 }
-.content
-{
-   display: -webkit-box;
 
-    -webkit-box-orient: vertical;
+.content {
+  display: -webkit-box;
 
-    -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 
-    overflow: hidden;
+  -webkit-line-clamp: 3;
+
+  overflow: hidden;
 }
 </style>

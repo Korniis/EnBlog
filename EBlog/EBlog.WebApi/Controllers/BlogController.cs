@@ -18,7 +18,12 @@ namespace EBlog.WebApi.Controllers
         [HttpGet("{pid}")]
         public async Task<ActionResult> SelectArtcleById(int pid)
         {
-            return Ok(await blogService.GetByIdAsync(pid));
+            var art = await blogService.GetByIdAsync(pid);
+            if (art == null)
+            {
+                return BadRequest("找不到该文章");
+            }
+            return Ok(art);
         }
     }
 }

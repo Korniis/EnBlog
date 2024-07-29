@@ -64,6 +64,7 @@ namespace EBlog.WebApi
                 options.Password.RequiredLength = 6;
                 options.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultEmailProvider;
                 options.Tokens.EmailConfirmationTokenProvider = TokenOptions.DefaultEmailProvider;
+                options.SignIn.RequireConfirmedEmail = true;
             });
             var idBuilder = new IdentityBuilder(typeof(User), typeof(Role), builder.Services);
             idBuilder.AddEntityFrameworkStores<UserDbContext>()
@@ -101,7 +102,7 @@ namespace EBlog.WebApi
 
             app.UseCors();
             app.UseHttpsRedirection();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();

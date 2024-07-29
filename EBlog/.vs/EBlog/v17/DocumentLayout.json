@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\instruction\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\instruction\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,44 +11,52 @@
       "RelativeMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|solutionrelative:eblog.domain\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|solutionrelative:eblog.domain\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\iblogserivce.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|solutionrelative:eblog.domain\\iblogserivce.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|solutionrelative:eblog.domain\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\migrations\\mydbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|solutionrelative:eblog.domain\\migrations\\mydbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\instruction\\blogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\instruction\\blogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\migrations\\userdb\\userdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|solutionrelative:eblog.domain\\migrations\\userdb\\userdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|solutionrelative:eblog.domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\migrations\\userdb\\20240729064956_changenull.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|solutionrelative:eblog.domain\\migrations\\userdb\\20240729064956_changenull.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|solutionrelative:eblog.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\migrations\\userdb\\20240726012623_adduserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|solutionrelative:eblog.domain\\migrations\\userdb\\20240726012623_adduserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\migrations\\userdb\\20240725064101_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|solutionrelative:eblog.domain\\migrations\\userdb\\20240725064101_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\migrations\\userdb\\userdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|solutionrelative:eblog.domain\\migrations\\userdb\\userdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\instruction\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\instruction\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|solutionrelative:eblog.domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\eblog.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -65,6 +65,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\eblog.webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\eblog.webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\instruction\\blogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\instruction\\blogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\helper\\jwtoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\helper\\jwtoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\migrations\\userdb\\20240726012623_adduserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|solutionrelative:eblog.domain\\migrations\\userdb\\20240726012623_adduserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\migrations\\userdb\\20240725064101_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|solutionrelative:eblog.domain\\migrations\\userdb\\20240725064101_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -81,10 +97,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|d:\\java\\demo_onwork\\eblog\\eblog.webapi\\helper\\jwtoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27D383DF-7B87-4554-8B36-F1E106EC7C12}|EBlog.WebApi\\EBlog.WebApi.csproj|solutionrelative:eblog.webapi\\helper\\jwtoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D84C3F26-E91F-46D0-A4D2-A2447C38AB55}|EBlog.Domain\\EBlog.Domain.csproj|d:\\java\\demo_onwork\\eblog\\eblog.domain\\migrations\\20240723023809_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -118,7 +130,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -130,85 +142,85 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Instruction\\UserService.cs",
-              "RelativeDocumentMoniker": "EBlog.WebApi\\Instruction\\UserService.cs",
-              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Instruction\\UserService.cs",
-              "RelativeToolTip": "EBlog.WebApi\\Instruction\\UserService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "DocumentIndex": 6,
+              "Title": "20240729064956_changenull.cs",
+              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\20240729064956_changenull.cs",
+              "RelativeDocumentMoniker": "EBlog.Domain\\Migrations\\UserDb\\20240729064956_changenull.cs",
+              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\20240729064956_changenull.cs",
+              "RelativeToolTip": "EBlog.Domain\\Migrations\\UserDb\\20240729064956_changenull.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAmwB8AAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T01:44:31.3Z",
+              "WhenOpened": "2024-07-29T06:49:56.407Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "EBlog.WebApi\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "EBlog.WebApi\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAowBcAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T01:35:05.404Z",
+              "DocumentIndex": 14,
+              "Title": "EBlog.Domain.csproj",
+              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\EBlog.Domain.csproj",
+              "RelativeDocumentMoniker": "EBlog.Domain\\EBlog.Domain.csproj",
+              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\EBlog.Domain.csproj",
+              "RelativeToolTip": "EBlog.Domain\\EBlog.Domain.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-25T04:56:23.959Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BlogController.cs",
-              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Controllers\\BlogController.cs",
-              "RelativeDocumentMoniker": "EBlog.WebApi\\Controllers\\BlogController.cs",
-              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Controllers\\BlogController.cs",
-              "RelativeToolTip": "EBlog.WebApi\\Controllers\\BlogController.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABIAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T01:32:33.407Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "IBlogSerivce.cs",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\IBlogSerivce.cs",
               "RelativeDocumentMoniker": "EBlog.Domain\\IBlogSerivce.cs",
               "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\IBlogSerivce.cs",
               "RelativeToolTip": "EBlog.Domain\\IBlogSerivce.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-25T03:20:28.257Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Instruction\\UserService.cs",
+              "RelativeDocumentMoniker": "EBlog.WebApi\\Instruction\\UserService.cs",
+              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Instruction\\UserService.cs",
+              "RelativeToolTip": "EBlog.WebApi\\Instruction\\UserService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T01:44:31.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "TestController.cs",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Controllers\\TestController.cs",
               "RelativeDocumentMoniker": "EBlog.WebApi\\Controllers\\TestController.cs",
               "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Controllers\\TestController.cs",
               "RelativeToolTip": "EBlog.WebApi\\Controllers\\TestController.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAAAF4AAAAFAAAA",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAAAFkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-24T02:06:47.722Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "IUserService.cs",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\IUserService.cs",
               "RelativeDocumentMoniker": "EBlog.Domain\\IUserService.cs",
               "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\IUserService.cs",
               "RelativeToolTip": "EBlog.Domain\\IUserService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-25T03:24:46.982Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "MyDbContext.cs",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\MyDbContext.cs",
               "RelativeDocumentMoniker": "EBlog.Domain\\MyDbContext.cs",
@@ -221,15 +233,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BlogService.cs",
-              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Instruction\\BlogService.cs",
-              "RelativeDocumentMoniker": "EBlog.WebApi\\Instruction\\BlogService.cs",
-              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Instruction\\BlogService.cs",
-              "RelativeToolTip": "EBlog.WebApi\\Instruction\\BlogService.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAACEAAAABAAAA",
+              "DocumentIndex": 4,
+              "Title": "MyDbContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\MyDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "EBlog.Domain\\Migrations\\MyDbContextModelSnapshot.cs",
+              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\MyDbContextModelSnapshot.cs",
+              "RelativeToolTip": "EBlog.Domain\\Migrations\\MyDbContextModelSnapshot.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T01:44:41.222Z",
+              "WhenOpened": "2024-07-29T06:53:38.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserDbContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\UserDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "EBlog.Domain\\Migrations\\UserDb\\UserDbContextModelSnapshot.cs",
+              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\UserDbContextModelSnapshot.cs",
+              "RelativeToolTip": "EBlog.Domain\\Migrations\\UserDb\\UserDbContextModelSnapshot.cs",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAmwGMAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T06:44:20.767Z",
               "EditorCaption": ""
             },
             {
@@ -240,26 +265,66 @@
               "RelativeDocumentMoniker": "EBlog.WebApi\\Program.cs",
               "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Program.cs",
               "RelativeToolTip": "EBlog.WebApi\\Program.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAAA2wFUAAAAmAAAA",
+              "ViewState": "AQIAADQAAAAAAAAAAAAmwG0AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T08:34:47.837Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Entities\\User.cs",
               "RelativeDocumentMoniker": "EBlog.Domain\\Entities\\User.cs",
               "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Entities\\User.cs",
               "RelativeToolTip": "EBlog.Domain\\Entities\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T06:06:22.505Z"
+              "WhenOpened": "2024-07-25T06:06:22.505Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "EBlog.WebApi\\WeatherForecast.cs",
+              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\WeatherForecast.cs",
+              "RelativeToolTip": "EBlog.WebApi\\WeatherForecast.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T06:00:51.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "EBlog.WebApi\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "EBlog.WebApi\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAAAAQAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T01:35:05.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BlogController.cs",
+              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Controllers\\BlogController.cs",
+              "RelativeDocumentMoniker": "EBlog.WebApi\\Controllers\\BlogController.cs",
+              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Controllers\\BlogController.cs",
+              "RelativeToolTip": "EBlog.WebApi\\Controllers\\BlogController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T01:32:33.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Role.cs",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Entities\\Role.cs",
               "RelativeDocumentMoniker": "EBlog.Domain\\Entities\\Role.cs",
@@ -267,79 +332,8 @@
               "RelativeToolTip": "EBlog.Domain\\Entities\\Role.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T06:06:32.234Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "20240726012623_adduserInfo.cs",
-              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\20240726012623_adduserInfo.cs",
-              "RelativeDocumentMoniker": "EBlog.Domain\\Migrations\\UserDb\\20240726012623_adduserInfo.cs",
-              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\20240726012623_adduserInfo.cs",
-              "RelativeToolTip": "EBlog.Domain\\Migrations\\UserDb\\20240726012623_adduserInfo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T01:26:23.427Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "20240726012740_adduserInfoag.cs",
-              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\20240726012740_adduserInfoag.cs",
-              "RelativeDocumentMoniker": "EBlog.Domain\\Migrations\\UserDb\\20240726012740_adduserInfoag.cs",
-              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\20240726012740_adduserInfoag.cs",
-              "RelativeToolTip": "EBlog.Domain\\Migrations\\UserDb\\20240726012740_adduserInfoag.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T01:27:40.209Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "20240725064101_init.cs",
-              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\20240725064101_init.cs",
-              "RelativeDocumentMoniker": "EBlog.Domain\\Migrations\\UserDb\\20240725064101_init.cs",
-              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\20240725064101_init.cs",
-              "RelativeToolTip": "EBlog.Domain\\Migrations\\UserDb\\20240725064101_init.cs",
-              "ViewState": "AQIAAA4BAAAAAAAAAAAAAFQAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T06:41:01.381Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "EBlog.Domain.csproj",
-              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\EBlog.Domain.csproj",
-              "RelativeDocumentMoniker": "EBlog.Domain\\EBlog.Domain.csproj",
-              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\EBlog.Domain.csproj",
-              "RelativeToolTip": "EBlog.Domain\\EBlog.Domain.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-07-25T04:56:23.959Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "UserDbContext.cs",
-              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\UserDbContext.cs",
-              "RelativeDocumentMoniker": "EBlog.Domain\\UserDbContext.cs",
-              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\UserDbContext.cs",
-              "RelativeToolTip": "EBlog.Domain\\UserDbContext.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T06:07:15.273Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UserDbContextModelSnapshot.cs",
-              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\UserDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "EBlog.Domain\\Migrations\\UserDb\\UserDbContextModelSnapshot.cs",
-              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\UserDbContextModelSnapshot.cs",
-              "RelativeToolTip": "EBlog.Domain\\Migrations\\UserDb\\UserDbContextModelSnapshot.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABUAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T06:44:20.767Z"
+              "WhenOpened": "2024-07-25T06:06:32.234Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -351,23 +345,25 @@
               "RelativeToolTip": "EBlog.WebApi\\EBlog.WebApi.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABSAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-07-26T01:02:30.512Z"
+              "WhenOpened": "2024-07-26T01:02:30.512Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\appsettings.json",
-              "RelativeDocumentMoniker": "EBlog.WebApi\\appsettings.json",
-              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\appsettings.json",
-              "RelativeToolTip": "EBlog.WebApi\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-23T08:34:44.063Z"
+              "DocumentIndex": 16,
+              "Title": "BlogService.cs",
+              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Instruction\\BlogService.cs",
+              "RelativeDocumentMoniker": "EBlog.WebApi\\Instruction\\BlogService.cs",
+              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Instruction\\BlogService.cs",
+              "RelativeToolTip": "EBlog.WebApi\\Instruction\\BlogService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T01:44:41.222Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 17,
               "Title": "JWTOptions.cs",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Helper\\JWTOptions.cs",
               "RelativeDocumentMoniker": "EBlog.WebApi\\Helper\\JWTOptions.cs",
@@ -375,11 +371,77 @@
               "RelativeToolTip": "EBlog.WebApi\\Helper\\JWTOptions.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T06:57:44.222Z"
+              "WhenOpened": "2024-07-25T06:57:44.222Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
+              "Title": "20240726012623_adduserInfo.cs",
+              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\20240726012623_adduserInfo.cs",
+              "RelativeDocumentMoniker": "EBlog.Domain\\Migrations\\UserDb\\20240726012623_adduserInfo.cs",
+              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\20240726012623_adduserInfo.cs",
+              "RelativeToolTip": "EBlog.Domain\\Migrations\\UserDb\\20240726012623_adduserInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T01:26:23.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "20240726012740_adduserInfoag.cs",
+              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\20240726012740_adduserInfoag.cs",
+              "RelativeDocumentMoniker": "EBlog.Domain\\Migrations\\UserDb\\20240726012740_adduserInfoag.cs",
+              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\20240726012740_adduserInfoag.cs",
+              "RelativeToolTip": "EBlog.Domain\\Migrations\\UserDb\\20240726012740_adduserInfoag.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T01:27:40.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20240725064101_init.cs",
+              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\20240725064101_init.cs",
+              "RelativeDocumentMoniker": "EBlog.Domain\\Migrations\\UserDb\\20240725064101_init.cs",
+              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\UserDb\\20240725064101_init.cs",
+              "RelativeToolTip": "EBlog.Domain\\Migrations\\UserDb\\20240725064101_init.cs",
+              "ViewState": "AQIAAAwBAAAAAAAAAABIwFQAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T06:41:01.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UserDbContext.cs",
+              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\UserDbContext.cs",
+              "RelativeDocumentMoniker": "EBlog.Domain\\UserDbContext.cs",
+              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\UserDbContext.cs",
+              "RelativeToolTip": "EBlog.Domain\\UserDbContext.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAABIwBAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T06:07:15.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\appsettings.json",
+              "RelativeDocumentMoniker": "EBlog.WebApi\\appsettings.json",
+              "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\appsettings.json",
+              "RelativeToolTip": "EBlog.WebApi\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-23T08:34:44.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "EBlog.WebApi\\Controllers\\WeatherForecastController.cs",
@@ -387,11 +449,12 @@
               "RelativeToolTip": "EBlog.WebApi\\Controllers\\WeatherForecastController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T07:03:20.552Z"
+              "WhenOpened": "2024-07-25T07:03:20.552Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "Article.cs",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Entities\\Article.cs",
               "RelativeDocumentMoniker": "EBlog.Domain\\Entities\\Article.cs",
@@ -399,11 +462,12 @@
               "RelativeToolTip": "EBlog.Domain\\Entities\\Article.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T06:41:34.618Z"
+              "WhenOpened": "2024-07-25T06:41:34.618Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "20240723023809_init.cs",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\20240723023809_init.cs",
               "RelativeDocumentMoniker": "EBlog.Domain\\Migrations\\20240723023809_init.cs",
@@ -411,11 +475,12 @@
               "RelativeToolTip": "EBlog.Domain\\Migrations\\20240723023809_init.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T06:41:44.479Z"
+              "WhenOpened": "2024-07-25T06:41:44.479Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "20240725064251_init2.cs",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\Migrations\\20240725064251_init2.cs",
               "RelativeDocumentMoniker": "EBlog.Domain\\Migrations\\20240725064251_init2.cs",
@@ -423,35 +488,38 @@
               "RelativeToolTip": "EBlog.Domain\\Migrations\\20240725064251_init2.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T06:42:51.777Z"
+              "WhenOpened": "2024-07-25T06:42:51.777Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "UserDbContextDesignTimeFactory.cs",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\DbDesign\\UserDbContextDesignTimeFactory.cs",
               "RelativeDocumentMoniker": "EBlog.Domain\\DbDesign\\UserDbContextDesignTimeFactory.cs",
               "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\DbDesign\\UserDbContextDesignTimeFactory.cs",
               "RelativeToolTip": "EBlog.Domain\\DbDesign\\UserDbContextDesignTimeFactory.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAABQAAAAMAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAABIwBQAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T06:27:18.859Z"
+              "WhenOpened": "2024-07-25T06:27:18.859Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "DbContextDesignTimeFactory.cs",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\DbDesign\\DbContextDesignTimeFactory.cs",
               "RelativeDocumentMoniker": "EBlog.Domain\\DbDesign\\DbContextDesignTimeFactory.cs",
               "ToolTip": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\DbDesign\\DbContextDesignTimeFactory.cs",
               "RelativeToolTip": "EBlog.Domain\\DbDesign\\DbContextDesignTimeFactory.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABQAAAApAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAABIwBQAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T08:34:51.245Z"
+              "WhenOpened": "2024-07-23T08:34:51.245Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\appsettings.Development.json",
               "RelativeDocumentMoniker": "EBlog.WebApi\\appsettings.Development.json",
@@ -459,7 +527,8 @@
               "RelativeToolTip": "EBlog.WebApi\\appsettings.Development.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-23T08:34:46.737Z"
+              "WhenOpened": "2024-07-23T08:34:46.737Z",
+              "EditorCaption": ""
             }
           ]
         }

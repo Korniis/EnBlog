@@ -56,15 +56,15 @@
                         <div class="boxR">
                             <div class="boxRcontent">
                                 <div v-for="item in pageData.psgArt" :key="item">
-                                    <show-box imgsrc="../../artimg/image.png">
+                                    <show-box :psgid="item.id" imgsrc="../../artimg/image.png">
                                         <template #article-title>
                                             {{ item.title }}
                                         </template>
                                         <template #articletime>
-                                            {{ item.datetime }}
+                                            {{ item.createdDate }}
                                         </template>
                                         <template #articlenum>
-                                            {{ item.num }}
+                                            {{ item.readCount }}
                                         </template> <template #artcontent>
                                             <span v-html="item.content"></span>
                                         </template>
@@ -89,7 +89,7 @@ import ShowBox from '../components/ShowBox.vue';
 import { useUserStore } from '@/stores/counter';
 import { storeToRefs } from 'pinia';
 
-import  axios  from 'axios';
+import axios from 'axios';
 
 import { dataType } from 'element-plus/es/components/table-v2/src/common';
 
@@ -129,5 +129,5 @@ onMounted(() => {
 </script>
 
 <style scoped>
-@import url(../assets/css/HomeViewcss);
+@import url(../assets/css/HomeView.css);
 </style>

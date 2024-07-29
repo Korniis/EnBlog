@@ -85,8 +85,9 @@
 <script setup>
 import { computed, onMounted, reactive } from 'vue';
 import { useUserStore } from '@/stores/counter';
-import axios from 'axios';
+import axios from '../api/index';
 import { storeToRefs } from 'pinia';
+import { ElMessage } from 'element-plus';
 const user_store = useUserStore()
 const {
 
@@ -95,7 +96,7 @@ const {
     psgSortNum,
 } = storeToRefs(user_store)
 let pageData = reactive({
-    pid: 7,
+
     psgCoutNum: user_store.psgCoutNum,
     psgTagNum: user_store.psgTagNum,
     psgSortNum: user_store.psgSortNum,
@@ -104,7 +105,7 @@ let pageData = reactive({
 
 
 });
-
+let propsData = defineProps(["pid"])
 let psgArt = reactive({
     id: 1,
     title: "",
@@ -114,19 +115,24 @@ let psgArt = reactive({
 });
 
 onMounted(() => {
-
-    axios.get(`api/Blog/SelectArtcleById/${pageData.pid}`
+    psgArt.id=propsData.pid;
+    axios.get(`api/Blog/SelectArtcleById/${psgArt.id}`
 
 
     ).then(res => {
+        if(res==null)
+    {
+        ElMessage()
+    }
         psgArt.id = res.data.id;
         psgArt.title = res.data.title;
         psgArt.content = res.data.content;
         psgArt.createdDate = res.data.createdDate;
         psgArt.readCount = res.data.readCount;
-        console.log(psgArt)
+        console.log(psgArt);
 
     }).catch(err => {
+        ElMessage.error(err.response.data);
         console.log(err);
     })
 
@@ -136,5 +142,5 @@ onMounted(() => {
 </script>
 
 <style>
-@import url(../assets/ContentPageView.css);
+@import url(../assets/css/ContentPageView.css);
 </style>

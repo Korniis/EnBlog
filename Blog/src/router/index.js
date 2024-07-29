@@ -9,11 +9,21 @@ const routes =[
     component: HomeView
   },
   {
-    path: '/ContentPage',
+    path: '/ContentPage/:pid',
     name: 'ContentPage',
-    component: () => import('../views/ContentPageView.vue')
+    component: () => import('../views/ContentPageView.vue'),
+    props: true
    },
-
+   {
+    path: '/Login',
+    name: 'Login',
+    component:() => import('../views/AuthPage/LoginView.vue')
+  },
+  {
+    path: '/Register',
+    name: 'Register',
+    component:() => import('../views/AuthPage/RegisterView.vue')
+  },
 
 ]
 

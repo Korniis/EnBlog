@@ -71,6 +71,6 @@ body {
     overflow-y: auto;
     background-color: #f0f0f0;
     --el-main-padding: 0;
-    background-image: url("background/leaves.png");
+    background-image: url("../background/leaves.png");
 }
 </style>
