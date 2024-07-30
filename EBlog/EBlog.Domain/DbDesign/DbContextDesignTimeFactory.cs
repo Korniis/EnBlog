@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Linq;
@@ -35,3 +35,4 @@ namespace EBlog.Domain.DbDesign
         }
     }
 }
+*/

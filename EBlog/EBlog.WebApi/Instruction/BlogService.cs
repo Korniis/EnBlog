@@ -6,10 +6,10 @@ namespace EBlog.WebApi.Instruction
 {
     public class BlogService : IBlogSerivce
     {
-        public readonly MyDbContext ctx;
+        public readonly UserDbContext ctx;
         public readonly UserManager<User> userManager;
 
-        public BlogService(MyDbContext ctx, UserManager<User> userManager)
+        public BlogService(UserDbContext ctx, UserManager<User> userManager)
         {
             this.ctx = ctx;
             this.userManager = userManager;
@@ -17,7 +17,7 @@ namespace EBlog.WebApi.Instruction
 
         public async Task<List<Article>> GetAllAsync()
         {
-            return ctx.Articles.OrderByDescending(c => c.CreatedDate).Take(12).ToList();
+            return ctx.Articles.OrderByDescending(c => c.CreateTime).Take(12).ToList();
         }
 
         public async Task<Article> GetByIdAsync(int id)
@@ -27,8 +27,11 @@ namespace EBlog.WebApi.Instruction
 
         public async Task<Article> GetByIdAsync(string name)
         {
-            return ctx.Articles.FirstOrDefault(a => a.Content == name);
+            return ctx.Articles.FirstOrDefault(a => a.Context == name);
 
         }
+
+
+
     }
 }

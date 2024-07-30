@@ -22,14 +22,14 @@ namespace EBlog.WebApi.Controllers
         public async Task< ActionResult> GetPageInfo()
         {
             var page = await blogService.GetAllAsync();
-            page.Select(article => new
+      /*      page.Select(article => new
             {
                 Id = article.Id,
                 Title = article.Title,
                 num = article.ReadCount,
                 datetime = article.CreatedDate,
                 Content = article.Content.Length > 100 ? article.Content.Substring(0, 100) : article.Content
-            }).ToList();
+            }).ToList();*/
 
             return Ok(page);
         }

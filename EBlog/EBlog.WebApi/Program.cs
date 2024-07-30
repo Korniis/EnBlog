@@ -41,11 +41,11 @@ namespace EBlog.WebApi
                 requirement[scheme] = new List<string>();
                 c.AddSecurityRequirement(requirement);
             });
-            builder.Services.AddDbContext<MyDbContext>(opt =>
+       /*     builder.Services.AddDbContext<MyDbContext>(opt =>
             {
                 string connStr = builder.Configuration.GetConnectionString("Default");
                 opt.UseMySql(connStr, new MySqlServerVersion(new Version(8, 6, 20)));
-            });
+            });*/
             string[] urls = new[] { "http://localhost:5173" };
             builder.Services.AddCors(options =>
                 options.AddDefaultPolicy(builder => builder.WithOrigins(urls)

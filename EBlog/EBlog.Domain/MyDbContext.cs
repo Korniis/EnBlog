@@ -1,4 +1,4 @@
-﻿using EBlog.Domain.Entities;
+﻿/*using EBlog.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace EBlog.Domain
     public class MyDbContext : DbContext
     {
         public DbSet<Article> Articles { get; set; }
-
+        public DbSet<ArticleType>  ArticleTypes { get; set; }
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {
             
@@ -27,3 +27,4 @@ namespace EBlog.Domain
         }
     }
 }
+*/
