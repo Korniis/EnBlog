@@ -13,10 +13,7 @@ namespace EBlog.BaseRepository
     public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class, new()
     {
         protected UserDbContext _dbContext;
-        protected BaseRepository(UserDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
+
         public async Task<bool> CreateAsync(TEntity entity)
         {
             await _dbContext.Set<TEntity>().AddAsync(entity);
@@ -26,19 +23,19 @@ namespace EBlog.BaseRepository
         {
             return await UpdateAsync(entity);
         }
-        public async Task<List<TEntity>> SelectAllAsync()
+        public virtual async Task<List<TEntity>> SelectAllAsync()
         {
             return await _dbContext.Set<TEntity>().ToListAsync();
         }
-        public async Task<List<TEntity>> SelectAllAsync(Expression<Func<TEntity, bool>> expression)
+        public virtual async Task<List<TEntity>> SelectAllAsync(Expression<Func<TEntity, bool>> expression)
         {
             return await _dbContext.Set<TEntity>().Where(expression).ToListAsync();
         }
-        public async Task<TEntity> SelectOneAsync(Expression<Func<TEntity, bool>> expression)
+        public virtual async Task<TEntity> SelectOneAsync(Expression<Func<TEntity, bool>> expression)
         {
             return await _dbContext.Set<TEntity>().FirstOrDefaultAsync(expression);
         }
-        public async Task<TEntity> SelectOneByIdAsync(long id)
+        public virtual  async Task<TEntity> SelectOneByIdAsync(long id)
         {
             return await _dbContext.Set<TEntity>().FindAsync(id);
         }

@@ -8,7 +8,6 @@ namespace EBlog.Domain.Entities
 {
     public class ArticleType:BaseId
     {
-        public int Id { get; set; }
 
         public string TypeName { get; set; }
 

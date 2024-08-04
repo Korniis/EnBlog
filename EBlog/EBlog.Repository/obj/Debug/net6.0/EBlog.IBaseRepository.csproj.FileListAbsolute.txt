@@ -1,0 +1,16 @@
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\bin\Debug\net6.0\EBlog.IBaseRepository.deps.json
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\bin\Debug\net6.0\EBlog.IBaseRepository.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\bin\Debug\net6.0\EBlog.IBaseRepository.pdb
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\bin\Debug\net6.0\EBlog.Domain.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\bin\Debug\net6.0\EBlog.Domain.pdb
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\obj\Debug\net6.0\EBlog.IBaseRepository.csproj.AssemblyReference.cache
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\obj\Debug\net6.0\EBlog.IBaseRepository.GeneratedMSBuildEditorConfig.editorconfig
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\obj\Debug\net6.0\EBlog.IBaseRepository.AssemblyInfoInputs.cache
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\obj\Debug\net6.0\EBlog.IBaseRepository.AssemblyInfo.cs
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\obj\Debug\net6.0\EBlog.IBaseRepository.csproj.CoreCompileInputs.cache
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\obj\Debug\net6.0\EBlog.IBaseRepository.sourcelink.json
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\obj\Debug\net6.0\EBlog.IB.063F241F.Up2Date
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\obj\Debug\net6.0\EBlog.IBaseRepository.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\obj\Debug\net6.0\refint\EBlog.IBaseRepository.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\obj\Debug\net6.0\EBlog.IBaseRepository.pdb
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Repository\obj\Debug\net6.0\ref\EBlog.IBaseRepository.dll

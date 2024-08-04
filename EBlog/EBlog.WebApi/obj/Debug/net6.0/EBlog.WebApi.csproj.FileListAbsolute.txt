@@ -105,3 +105,14 @@ D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\EBlog.BaseRepository.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\EBlog.BaseService.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\EBlog.IBaseRepository.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\EBlog.IBaseService.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\EBlog.BaseService.pdb
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\EBlog.BaseRepository.pdb
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\EBlog.IBaseRepository.pdb
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\EBlog.IBaseService.pdb
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\EBlog.Utility.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\EBlog.Utility.pdb
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\AutoMapper.dll

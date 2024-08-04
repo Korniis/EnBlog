@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "AutoMapper/13.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -1605,6 +1621,34 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
+      "EBlog.BaseRepository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EBlog.Domain": "1.0.0",
+          "EBlog.IBaseRepository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EBlog.BaseRepository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EBlog.BaseRepository.dll": {}
+        }
+      },
+      "EBlog.BaseService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EBlog.IBaseRepository": "1.0.0",
+          "EBlog.IBaseService": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EBlog.BaseService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EBlog.BaseService.dll": {}
+        }
+      },
       "EBlog.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1623,10 +1667,65 @@
         "runtime": {
           "bin/placeholder/EBlog.Domain.dll": {}
         }
+      },
+      "EBlog.IBaseRepository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EBlog.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EBlog.IBaseRepository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EBlog.IBaseRepository.dll": {}
+        }
+      },
+      "EBlog.IBaseService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EBlog.IBaseRepository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EBlog.IBaseService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EBlog.IBaseService.dll": {}
+        }
+      },
+      "EBlog.Utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "13.0.1",
+          "EBlog.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EBlog.Utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EBlog.Utility.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AutoMapper/13.0.1": {
+      "sha512": "/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
+      "type": "package",
+      "path": "automapper/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.13.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/net6.0/AutoMapper.dll",
+        "lib/net6.0/AutoMapper.xml"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -4957,15 +5056,43 @@
         "version.txt"
       ]
     },
+    "EBlog.BaseRepository/1.0.0": {
+      "type": "project",
+      "path": "../EBlog.BaseRespository/EBlog.BaseRepository.csproj",
+      "msbuildProject": "../EBlog.BaseRespository/EBlog.BaseRepository.csproj"
+    },
+    "EBlog.BaseService/1.0.0": {
+      "type": "project",
+      "path": "../BaseService/EBlog.BaseService.csproj",
+      "msbuildProject": "../BaseService/EBlog.BaseService.csproj"
+    },
     "EBlog.Domain/1.0.0": {
       "type": "project",
       "path": "../EBlog.Domain/EBlog.Domain.csproj",
       "msbuildProject": "../EBlog.Domain/EBlog.Domain.csproj"
+    },
+    "EBlog.IBaseRepository/1.0.0": {
+      "type": "project",
+      "path": "../EBlog.Repository/EBlog.IBaseRepository.csproj",
+      "msbuildProject": "../EBlog.Repository/EBlog.IBaseRepository.csproj"
+    },
+    "EBlog.IBaseService/1.0.0": {
+      "type": "project",
+      "path": "../IBaseService/EBlog.IBaseService.csproj",
+      "msbuildProject": "../IBaseService/EBlog.IBaseService.csproj"
+    },
+    "EBlog.Utility/1.0.0": {
+      "type": "project",
+      "path": "../EBlog.Utility/EBlog.Utility.csproj",
+      "msbuildProject": "../EBlog.Utility/EBlog.Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "EBlog.BaseRepository >= 1.0.0",
+      "EBlog.BaseService >= 1.0.0",
       "EBlog.Domain >= 1.0.0",
+      "EBlog.Utility >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.32",
       "Microsoft.EntityFrameworkCore >= 6.0.32",
       "Microsoft.EntityFrameworkCore.Relational >= 6.0.32",
@@ -5008,8 +5135,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\JAVA\\Demo_OnWork\\EBlog\\BaseService\\EBlog.BaseService.csproj": {
+              "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\BaseService\\EBlog.BaseService.csproj"
+            },
+            "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.BaseRespository\\EBlog.BaseRepository.csproj": {
+              "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.BaseRespository\\EBlog.BaseRepository.csproj"
+            },
             "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\EBlog.Domain.csproj": {
               "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\EBlog.Domain.csproj"
+            },
+            "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Utility\\EBlog.Utility.csproj": {
+              "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Utility\\EBlog.Utility.csproj"
             }
           }
         }

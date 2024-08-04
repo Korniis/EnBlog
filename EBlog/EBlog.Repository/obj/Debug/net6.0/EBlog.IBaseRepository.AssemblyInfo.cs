@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EBlog.IBaseRepository")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5752ecf76885438ff9725f280f033254dea77f8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f4013387d471089eab1aff8b0f8db580b8675d5")]
 [assembly: System.Reflection.AssemblyProductAttribute("EBlog.IBaseRepository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EBlog.IBaseRepository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

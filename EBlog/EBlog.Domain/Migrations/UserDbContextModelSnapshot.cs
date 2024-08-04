@@ -21,11 +21,11 @@ namespace EBlog.Domain.Migrations
 
             modelBuilder.Entity("EBlog.Domain.Entities.Article", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
-                    b.Property<string>("Context")
+                    b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("Text");
 
@@ -42,8 +42,8 @@ namespace EBlog.Domain.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("TypeId")
-                        .HasColumnType("int");
+                    b.Property<long>("TypeId")
+                        .HasColumnType("bigint");
 
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");
@@ -62,9 +62,9 @@ namespace EBlog.Domain.Migrations
 
             modelBuilder.Entity("EBlog.Domain.Entities.ArticleType", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
@@ -287,7 +287,7 @@ namespace EBlog.Domain.Migrations
                         .IsRequired();
 
                     b.HasOne("EBlog.Domain.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Articles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -349,6 +349,11 @@ namespace EBlog.Domain.Migrations
                 });
 
             modelBuilder.Entity("EBlog.Domain.Entities.ArticleType", b =>
+                {
+                    b.Navigation("Articles");
+                });
+
+            modelBuilder.Entity("EBlog.Domain.Entities.User", b =>
                 {
                     b.Navigation("Articles");
                 });

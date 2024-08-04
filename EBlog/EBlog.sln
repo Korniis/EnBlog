@@ -10,15 +10,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBlog.WebApi", "EBlog.WebAp
 		{FEA60203-D9DA-49DC-9AE6-537BA53B5489} = {FEA60203-D9DA-49DC-9AE6-537BA53B5489}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBlog.IBaseRepository", "EBlog.Repository\EBlog.IBaseRepository.csproj", "{FEA60203-D9DA-49DC-9AE6-537BA53B5489}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBlog.IBaseRepository", "EBlog.Repository\EBlog.IBaseRepository.csproj", "{FEA60203-D9DA-49DC-9AE6-537BA53B5489}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBlog.BaseRepository", "EBlog.BaseRespository\EBlog.BaseRepository.csproj", "{568E8FAD-D818-4EF3-BEB8-479D2481ACD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBlog.BaseRepository", "EBlog.BaseRespository\EBlog.BaseRepository.csproj", "{568E8FAD-D818-4EF3-BEB8-479D2481ACD0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{129EE556-F331-453C-8C37-F3A0EDA214C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{77D4C7E0-535A-4551-BEED-CC2BF8E858B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBaseService", "IBaseService\IBaseService.csproj", "{90F8B975-7787-4138-BA22-8BE5F56C3AF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBlog.IBaseService", "IBaseService\EBlog.IBaseService.csproj", "{90F8B975-7787-4138-BA22-8BE5F56C3AF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBlog.BaseService", "BaseService\EBlog.BaseService.csproj", "{DD3F3F41-B90C-495F-8B26-9AFA6BAF8F4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBlog.Utility", "EBlog.Utility\EBlog.Utility.csproj", "{5221CFA9-B134-418D-A5DD-50253018A605}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +50,14 @@ Global
 		{90F8B975-7787-4138-BA22-8BE5F56C3AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90F8B975-7787-4138-BA22-8BE5F56C3AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90F8B975-7787-4138-BA22-8BE5F56C3AF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD3F3F41-B90C-495F-8B26-9AFA6BAF8F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD3F3F41-B90C-495F-8B26-9AFA6BAF8F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD3F3F41-B90C-495F-8B26-9AFA6BAF8F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD3F3F41-B90C-495F-8B26-9AFA6BAF8F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5221CFA9-B134-418D-A5DD-50253018A605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5221CFA9-B134-418D-A5DD-50253018A605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5221CFA9-B134-418D-A5DD-50253018A605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5221CFA9-B134-418D-A5DD-50253018A605}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +66,7 @@ Global
 		{FEA60203-D9DA-49DC-9AE6-537BA53B5489} = {129EE556-F331-453C-8C37-F3A0EDA214C8}
 		{568E8FAD-D818-4EF3-BEB8-479D2481ACD0} = {129EE556-F331-453C-8C37-F3A0EDA214C8}
 		{90F8B975-7787-4138-BA22-8BE5F56C3AF6} = {77D4C7E0-535A-4551-BEED-CC2BF8E858B4}
+		{DD3F3F41-B90C-495F-8B26-9AFA6BAF8F4D} = {77D4C7E0-535A-4551-BEED-CC2BF8E858B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5C6760E-A243-4499-82AA-A028E161B34B}

@@ -8,7 +8,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using EBlog.WebApi.Instruction;
+using EBlog.IBaseRepository;
+using EBlog.BaseRepository;
+using EBlog.IBaseService;
+using EBlog.BaseService;
+using EBlog.Utility.DTO;
 namespace EBlog.WebApi
 {
     public class Program
@@ -41,6 +45,8 @@ namespace EBlog.WebApi
                 requirement[scheme] = new List<string>();
                 c.AddSecurityRequirement(requirement);
             });
+            builder .Services.AddCustomService();
+            builder.Services.AddAutoMapper(typeof(DTOMapper));
        /*     builder.Services.AddDbContext<MyDbContext>(opt =>
             {
                 string connStr = builder.Configuration.GetConnectionString("Default");
@@ -89,8 +95,7 @@ namespace EBlog.WebApi
             });
 
 
-            builder.Services.AddScoped<UserService>();
-            builder.Services.AddScoped<BlogService>();
+  
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -108,6 +113,24 @@ namespace EBlog.WebApi
             app.MapControllers();
 
             app.Run();
+        }
+        
+         
+
+
+    }
+    public static class IOCExtend
+    {
+        public static IServiceCollection AddCustomService(this IServiceCollection services)
+        {   //²Ö´¢²ã
+             services.AddScoped<IArticleRepository, ArticleRepository>();
+             services.AddScoped<IArticleTypeRepository, ArticleTypeRepository>();
+            //·þÎñ²ã
+
+            services.AddScoped<IArticleService, ArticleService>();
+            services.AddScoped<IArticleTypeService, ArticleTypeService>();
+
+            return services;
         }
     }
 }

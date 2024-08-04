@@ -4,6 +4,150 @@
     "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\EBlog.WebApi.csproj": {}
   },
   "projects": {
+    "D:\\JAVA\\Demo_OnWork\\EBlog\\BaseService\\EBlog.BaseService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\JAVA\\Demo_OnWork\\EBlog\\BaseService\\EBlog.BaseService.csproj",
+        "projectName": "EBlog.BaseService",
+        "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\BaseService\\EBlog.BaseService.csproj",
+        "packagesPath": "C:\\Users\\14256\\.nuget\\packages\\",
+        "outputPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\BaseService\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\14256\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Repository\\EBlog.IBaseRepository.csproj": {
+                "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Repository\\EBlog.IBaseRepository.csproj"
+              },
+              "D:\\JAVA\\Demo_OnWork\\EBlog\\IBaseService\\EBlog.IBaseService.csproj": {
+                "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\IBaseService\\EBlog.IBaseService.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.BaseRespository\\EBlog.BaseRepository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.BaseRespository\\EBlog.BaseRepository.csproj",
+        "projectName": "EBlog.BaseRepository",
+        "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.BaseRespository\\EBlog.BaseRepository.csproj",
+        "packagesPath": "C:\\Users\\14256\\.nuget\\packages\\",
+        "outputPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.BaseRespository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\14256\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\EBlog.Domain.csproj": {
+                "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\EBlog.Domain.csproj"
+              },
+              "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Repository\\EBlog.IBaseRepository.csproj": {
+                "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Repository\\EBlog.IBaseRepository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\EBlog.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -99,6 +243,150 @@
         }
       }
     },
+    "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Repository\\EBlog.IBaseRepository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Repository\\EBlog.IBaseRepository.csproj",
+        "projectName": "EBlog.IBaseRepository",
+        "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Repository\\EBlog.IBaseRepository.csproj",
+        "packagesPath": "C:\\Users\\14256\\.nuget\\packages\\",
+        "outputPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\14256\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\EBlog.Domain.csproj": {
+                "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\EBlog.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Utility\\EBlog.Utility.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Utility\\EBlog.Utility.csproj",
+        "projectName": "EBlog.Utility",
+        "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Utility\\EBlog.Utility.csproj",
+        "packagesPath": "C:\\Users\\14256\\.nuget\\packages\\",
+        "outputPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Utility\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\14256\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\EBlog.Domain.csproj": {
+                "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\EBlog.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\EBlog.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -128,8 +416,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "D:\\JAVA\\Demo_OnWork\\EBlog\\BaseService\\EBlog.BaseService.csproj": {
+                "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\BaseService\\EBlog.BaseService.csproj"
+              },
+              "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.BaseRespository\\EBlog.BaseRepository.csproj": {
+                "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.BaseRespository\\EBlog.BaseRepository.csproj"
+              },
               "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\EBlog.Domain.csproj": {
                 "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Domain\\EBlog.Domain.csproj"
+              },
+              "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Utility\\EBlog.Utility.csproj": {
+                "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Utility\\EBlog.Utility.csproj"
               }
             }
           }
@@ -193,6 +490,75 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\JAVA\\Demo_OnWork\\EBlog\\IBaseService\\EBlog.IBaseService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\JAVA\\Demo_OnWork\\EBlog\\IBaseService\\EBlog.IBaseService.csproj",
+        "projectName": "EBlog.IBaseService",
+        "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\IBaseService\\EBlog.IBaseService.csproj",
+        "packagesPath": "C:\\Users\\14256\\.nuget\\packages\\",
+        "outputPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\IBaseService\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\14256\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Repository\\EBlog.IBaseRepository.csproj": {
+                "projectPath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Repository\\EBlog.IBaseRepository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

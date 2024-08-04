@@ -8,7 +8,10 @@
     ".NETCoreApp,Version=v6.0": {
       "EBlog.WebApi/1.0.0": {
         "dependencies": {
+          "EBlog.BaseRepository": "1.0.0",
+          "EBlog.BaseService": "1.0.0",
           "EBlog.Domain": "1.0.0",
+          "EBlog.Utility": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.32",
           "Microsoft.EntityFrameworkCore": "6.0.32",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.32",
@@ -19,6 +22,17 @@
         },
         "runtime": {
           "EBlog.WebApi.dll": {}
+        }
+      },
+      "AutoMapper/13.0.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/AutoMapper.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.0"
+          }
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -804,6 +818,24 @@
         }
       },
       "System.Threading.Tasks.Extensions/4.5.1": {},
+      "EBlog.BaseRepository/1.0.0": {
+        "dependencies": {
+          "EBlog.Domain": "1.0.0",
+          "EBlog.IBaseRepository": "1.0.0"
+        },
+        "runtime": {
+          "EBlog.BaseRepository.dll": {}
+        }
+      },
+      "EBlog.BaseService/1.0.0": {
+        "dependencies": {
+          "EBlog.IBaseRepository": "1.0.0",
+          "EBlog.IBaseService": "1.0.0"
+        },
+        "runtime": {
+          "EBlog.BaseService.dll": {}
+        }
+      },
       "EBlog.Domain/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.32",
@@ -817,6 +849,31 @@
         "runtime": {
           "EBlog.Domain.dll": {}
         }
+      },
+      "EBlog.IBaseRepository/1.0.0": {
+        "dependencies": {
+          "EBlog.Domain": "1.0.0"
+        },
+        "runtime": {
+          "EBlog.IBaseRepository.dll": {}
+        }
+      },
+      "EBlog.IBaseService/1.0.0": {
+        "dependencies": {
+          "EBlog.IBaseRepository": "1.0.0"
+        },
+        "runtime": {
+          "EBlog.IBaseService.dll": {}
+        }
+      },
+      "EBlog.Utility/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "13.0.1",
+          "EBlog.Domain": "1.0.0"
+        },
+        "runtime": {
+          "EBlog.Utility.dll": {}
+        }
       }
     }
   },
@@ -825,6 +882,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoMapper/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
+      "path": "automapper/13.0.1",
+      "hashPath": "automapper.13.0.1.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",
@@ -1519,7 +1583,32 @@
       "path": "system.threading.tasks.extensions/4.5.1",
       "hashPath": "system.threading.tasks.extensions.4.5.1.nupkg.sha512"
     },
+    "EBlog.BaseRepository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EBlog.BaseService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "EBlog.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EBlog.IBaseRepository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EBlog.IBaseService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EBlog.Utility/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

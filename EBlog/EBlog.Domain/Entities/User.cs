@@ -12,7 +12,7 @@ namespace EBlog.Domain.Entities
         public string? NickName { get; set; }
         public string? MyDescriptions { get; set; }
         public string? WxAccount {  get; set; }
-
+        public List<Article> Articles { get; set; }=new List<Article>();
 
     }
 }

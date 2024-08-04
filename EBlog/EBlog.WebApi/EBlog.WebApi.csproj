@@ -18,7 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BaseService\EBlog.BaseService.csproj" />
+    <ProjectReference Include="..\EBlog.BaseRespository\EBlog.BaseRepository.csproj" />
     <ProjectReference Include="..\EBlog.Domain\EBlog.Domain.csproj" />
+    <ProjectReference Include="..\EBlog.Utility\EBlog.Utility.csproj" />
   </ItemGroup>
 
 </Project>

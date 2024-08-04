@@ -9,6 +9,7 @@ namespace EBlog.IBaseRepository
 {
     public interface IArticleTypeRepository:IBaseRepository<ArticleType>
     {
+       
 
     }
 }

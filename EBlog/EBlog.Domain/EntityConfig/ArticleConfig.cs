@@ -15,12 +15,12 @@ namespace EBlog.Domain.EntityConfig
         {   //配置表名
             builder.ToTable("T_Article");
             //长文本类型修改
-            builder.Property(x=>x.Context).HasColumnType("Text");
+            builder.Property(x=>x.Content).HasColumnType("Text");
             //软删除
             builder.HasQueryFilter(x => x.IsDeleted == false);
             //多映射
             builder.HasOne(x => x.Type).WithMany(x => x.Articles).HasForeignKey(x => x.TypeId);
-
+            builder.HasOne(x => x.User).WithMany(x => x.Articles).HasForeignKey(x => x.UserId);
         }
     }
 }

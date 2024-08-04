@@ -27,7 +27,7 @@ namespace EBlog.Domain.DbDesign
                     connStr = o["connStr"].ToString();
                 }
             }
-            builder.UseMySql(connStr, new MySqlServerVersion(new Version(8, 6, 20)));
+            builder.UseMySql(connStr,  new MySqlServerVersion(new Version(8, 6, 20)));
 
             return new UserDbContext(builder.Options);
 
