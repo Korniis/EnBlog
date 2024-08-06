@@ -35,7 +35,7 @@ namespace EBlog.WebApi.Controllers
             {
                 typeDTOs.Add(mapper.Map<ArticleTypeDTO>(a));
             }
-            return ApiResultHelper.Sucesss(typeDTOs);
+            return ApiResultHelper.Success(typeDTOs);
         }
         [HttpPost]
         public async Task<ActionResult<ApiResult>> CreateArticleType( string typeName)
@@ -48,7 +48,7 @@ namespace EBlog.WebApi.Controllers
             bool result = await _ArticleTypeService.CreateAsync(articleType);
             if (result)
             {
-                return ApiResultHelper.Sucesss(articleType);
+                return ApiResultHelper.Success(articleType);
             }
             return ApiResultHelper.Error($"{articleType}创建失败");
         }
@@ -66,7 +66,7 @@ namespace EBlog.WebApi.Controllers
             {
                 return ApiResultHelper.Error("删除操作失败");
             }
-            return ApiResultHelper.Sucesss("删除成功");
+            return ApiResultHelper.Success("删除成功");
         }
         [HttpPut]
         public async Task<ActionResult<ApiResult>> Edit(long id,string typeName)
@@ -84,7 +84,7 @@ namespace EBlog.WebApi.Controllers
                 return ApiResultHelper.Error("修改失败");
 
             }
-            return ApiResultHelper.Sucesss("修改成功");
+            return ApiResultHelper.Success("修改成功");
         }
 
         public override bool Equals(object? obj)

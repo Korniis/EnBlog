@@ -19,7 +19,7 @@ namespace EBlog.Domain.Entities
         public long TypeId { get; set; }
 
         //指定一个与数据库同名同类型的UserId作外键: 需要在Config再配置
-        public long UserId { get; set; }
+        public long? UserId { get; set; }
 
         public int ViewCount { get; set; }
 
@@ -27,7 +27,7 @@ namespace EBlog.Domain.Entities
 
         public bool IsDeleted { get; set; }
 
-        public User User { get; set; }
+        public User? User { get; set; }
         public ArticleType Type { get; set; }
 
     }

@@ -45,7 +45,7 @@ namespace EBlog.Domain.Migrations
                     b.Property<long>("TypeId")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("UserId")
+                    b.Property<long?>("UserId")
                         .HasColumnType("bigint");
 
                     b.Property<int>("ViewCount")
@@ -72,6 +72,9 @@ namespace EBlog.Domain.Migrations
                     b.Property<string>("TypeName")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<int?>("hot")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -288,9 +291,7 @@ namespace EBlog.Domain.Migrations
 
                     b.HasOne("EBlog.Domain.Entities.User", "User")
                         .WithMany("Articles")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Type");
 

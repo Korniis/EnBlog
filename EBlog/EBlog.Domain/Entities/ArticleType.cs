@@ -10,6 +10,7 @@ namespace EBlog.Domain.Entities
     {
 
         public string TypeName { get; set; }
+        public int?  hot { get; set; }
 
         public List<Article> Articles { get; set; } = new List<Article>();
 

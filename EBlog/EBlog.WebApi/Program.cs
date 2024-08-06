@@ -20,13 +20,12 @@ namespace EBlog.WebApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
             // Add services to the container.
-
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen(c=>{
+            builder.Services.AddSwaggerGen(c =>
+            {
                 var scheme = new OpenApiSecurityScheme()
                 {
                     Description = "Authorization header. \r\nExample: 'Bearer 12345abcdef'",
@@ -45,43 +44,75 @@ namespace EBlog.WebApi
                 requirement[scheme] = new List<string>();
                 c.AddSecurityRequirement(requirement);
             });
-            builder .Services.AddCustomService();
-            builder.Services.AddAutoMapper(typeof(DTOMapper));
-       /*     builder.Services.AddDbContext<MyDbContext>(opt =>
+            builder.Services.AddDbContext<UserDbContext>(opt =>
             {
                 string connStr = builder.Configuration.GetConnectionString("Default");
                 opt.UseMySql(connStr, new MySqlServerVersion(new Version(8, 6, 20)));
-            });*/
+            });
+            builder.Services.AddCustomIOC();
+            builder.Services.AddAutoMapper(typeof(DTOMapper));
+            builder.Services.AddIdentityIOC(builder.Configuration);
             string[] urls = new[] { "http://localhost:5173" };
             builder.Services.AddCors(options =>
                 options.AddDefaultPolicy(builder => builder.WithOrigins(urls)
                 .AllowAnyMethod().AllowAnyHeader().AllowCredentials()));
-            builder.Services.AddDbContext<UserDbContext>(opt => {
-                string connStr = builder.Configuration.GetConnectionString("Default");
-                opt.UseMySql(connStr, new MySqlServerVersion(new Version(8, 6, 20)));
-            });
-            builder.Services.AddDataProtection();
-            builder.Services.AddIdentityCore<User>(options =>
+            var app = builder.Build();
+            // Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment())
             {
-                options.Password.RequireDigit = false;
-                options.Password.RequireLowercase = false;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = false;
-                options.Password.RequiredLength = 6;
-                options.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultEmailProvider;
-                options.Tokens.EmailConfirmationTokenProvider = TokenOptions.DefaultEmailProvider;
-                options.SignIn.RequireConfirmedEmail = true;
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+            app.UseCors();
+            app.UseHttpsRedirection();
+            app.UseAuthentication();
+            app.UseAuthorization();
+            app.MapControllers();
+            app.Run();
+        }
+    }
+    public static class IOCExtend
+    {
+        public static IServiceCollection AddCustomIOC(this IServiceCollection services)
+        {   //仓储层
+            services.AddScoped<IArticleRepository, ArticleRepository>();
+            services.AddScoped<IArticleTypeRepository, ArticleTypeRepository>();
+            services.AddScoped<IUserRespository, UserRespostiory>();
+            //服务层
+            services.AddScoped<IArticleService, ArticleService>();
+            services.AddScoped<IArticleTypeService, ArticleTypeService>();
+            services.AddScoped<IUserService, UserService>();
+            return services;
+        }
+        public static IServiceCollection AddIdentityIOC(this IServiceCollection services, IConfiguration Configuration)
+        {   //数据保护
+            services.AddDataProtection();
+            //核心框架
+            services.AddIdentityCore<User>(options =>
+            {   //密码
+                options.Password.RequireDigit = true; //必须有数字
+                options.Password.RequireLowercase = false; //小写
+                options.Password.RequireNonAlphanumeric = false; //符号
+                options.Password.RequireUppercase = false; //大写
+                options.Password.RequiredLength = 6; //最短长度
+                //锁定
+                options.Lockout.MaxFailedAccessAttempts = 5;//最大登录次数
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);//锁定事件
+                //验证
+                options.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultEmailProvider; //密码重置验证
+                options.Tokens.EmailConfirmationTokenProvider = TokenOptions.DefaultEmailProvider; //注册邮箱验证
             });
-            var idBuilder = new IdentityBuilder(typeof(User), typeof(Role), builder.Services);
+
+            var idBuilder = new IdentityBuilder(typeof(User), typeof(Role), services);
             idBuilder.AddEntityFrameworkStores<UserDbContext>()
                 .AddDefaultTokenProviders()
                 .AddRoleManager<RoleManager<Role>>()
                 .AddUserManager<UserManager<User>>();
-            builder.Services.Configure<JWTOptions>(builder.Configuration.GetSection("JWT"));
-            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            services.Configure<JWTOptions>(Configuration.GetSection("JWT"));
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(x =>
             {
-                var jwtOpt = builder.Configuration.GetSection("JWT").Get<JWTOptions>();
+                var jwtOpt = Configuration.GetSection("JWT").Get<JWTOptions>();
                 byte[] keyBytes = Encoding.UTF8.GetBytes(jwtOpt.SigningKey);
                 var secKey = new SymmetricSecurityKey(keyBytes);
                 x.TokenValidationParameters = new()
@@ -93,44 +124,8 @@ namespace EBlog.WebApi
                     IssuerSigningKey = secKey
                 };
             });
-
-
-  
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
-            app.UseCors();
-            app.UseHttpsRedirection();
-            app.UseAuthentication();
-            app.UseAuthorization();
-
-            app.MapControllers();
-
-            app.Run();
-        }
-        
-         
-
-
-    }
-    public static class IOCExtend
-    {
-        public static IServiceCollection AddCustomService(this IServiceCollection services)
-        {   //仓储层
-             services.AddScoped<IArticleRepository, ArticleRepository>();
-             services.AddScoped<IArticleTypeRepository, ArticleTypeRepository>();
-            //服务层
-
-            services.AddScoped<IArticleService, ArticleService>();
-            services.AddScoped<IArticleTypeService, ArticleTypeService>();
-
             return services;
         }
     }
+     
 }

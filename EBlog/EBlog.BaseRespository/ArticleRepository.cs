@@ -23,22 +23,22 @@ namespace EBlog.BaseRepository
 
         public override async Task<List<Article>> SelectAllAsync()
         {
-            return await _dbContext.Articles.Include(x=>x.Type).ToListAsync();
+            return await _dbContext.Articles.Include(x=>x.Type).Include(x=>x.User).ToListAsync();
         }
 
         public override async Task<List<Article>> SelectAllAsync(Expression<Func<Article, bool>> expression)
         {
-            return  await _dbContext.Articles.Include(x => x.Type).Where(expression).ToListAsync();
+            return  await _dbContext.Articles.Include(x => x.Type).Include(x => x.User).Where(expression).ToListAsync();
         }
 
         public override async Task<Article> SelectOneAsync(Expression<Func<Article, bool>> expression)
         {
-            return await  _dbContext.Articles.Include(x=>x.Type).FirstOrDefaultAsync(expression);
+            return await  _dbContext.Articles.Include(x=>x.Type).Include(x => x.User).FirstOrDefaultAsync(expression);
         }
 
         public override async Task<Article> SelectOneByIdAsync(long id)
         {
-            return await _dbContext.Articles.Include(x => x.Type).FirstOrDefaultAsync(x=>x.Id==id);
+            return await _dbContext.Articles.Include(x => x.Type).Include(x => x.User).FirstOrDefaultAsync(x=>x.Id==id);
         }
     }
 }

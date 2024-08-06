@@ -94,7 +94,6 @@ D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Ide
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\obj\Debug\net6.0\EBlog.WebApi.sourcelink.json
-D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\DbSettings.json
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
@@ -116,3 +115,6 @@ D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\EBlog.IBaseService.pdb
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\EBlog.Utility.dll
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\EBlog.Utility.pdb
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\AutoMapper.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll

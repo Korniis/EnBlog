@@ -13,7 +13,7 @@ namespace EBlog.Utility
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public static ApiResult Sucesss( dynamic data)
+        public static ApiResult Success( dynamic data)
         {
             return new ApiResult
             {

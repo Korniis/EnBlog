@@ -38,7 +38,7 @@ namespace EBlog.WebApi.Controllers
                 articleDTOs.Add(mapper.Map<ArticleDTO>(article));
             }
 
-            return ApiResultHelper.Sucesss(articleDTOs);
+            return ApiResultHelper.Success(articleDTOs);
         }
         [HttpPost]
         public async Task<ActionResult<ApiResult>> CreateArticle(string title, string content, long tid)
@@ -57,7 +57,7 @@ namespace EBlog.WebApi.Controllers
             bool result = await _articleService.CreateAsync(article);
             if (result)
             {
-                return ApiResultHelper.Sucesss(article);
+                return ApiResultHelper.Success(article);
             }
             return ApiResultHelper.Error("创建失败");
         }
@@ -75,7 +75,7 @@ namespace EBlog.WebApi.Controllers
             {
                 return ApiResultHelper.Error("删除操作失败");
             }
-            return ApiResultHelper.Sucesss("删除成功");
+            return ApiResultHelper.Success("删除成功");
         }
         [HttpPut]
         public async Task<ActionResult<ApiResult>>  Edit (long id, string title, string content ,long tid )
@@ -93,7 +93,7 @@ namespace EBlog.WebApi.Controllers
                 return ApiResultHelper.Error("修改失败");
 
             }
-            return ApiResultHelper.Sucesss("修改成功");
+            return ApiResultHelper.Success("修改成功");
         }
     }
 }
