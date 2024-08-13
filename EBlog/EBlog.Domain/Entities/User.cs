@@ -9,6 +9,7 @@ namespace EBlog.Domain.Entities
 {
     public class User:IdentityUser<long>
     {
+        public long? JwtVersion {  get; set; }
         public string? NickName { get; set; }
         public string? MyDescriptions { get; set; }
         public string? WxAccount {  get; set; }

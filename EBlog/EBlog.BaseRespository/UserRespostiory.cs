@@ -19,7 +19,7 @@ namespace EBlog.BaseRepository
         public UserRespostiory(UserDbContext userDbContext)
         {
             base._dbContext = userDbContext;
-            this._dbContext = userDbContext;
+           _dbContext = userDbContext;
         }
 
         public async override Task<List<User>> SelectAllAsync()

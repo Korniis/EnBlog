@@ -157,6 +157,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AlibabaCloud.SDK.Dysmsapi20170525": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "AutoMapper": {
               "target": "Package",
               "version": "[13.0.1, )"

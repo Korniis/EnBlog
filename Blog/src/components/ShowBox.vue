@@ -17,7 +17,7 @@
             <slot name="articlenum"></slot>
           </a><span class="article-meta-label"> 人看过</span></span>
       </div>
-      <div class="content">
+      <div class="content" >
         <slot name="artcontent"></slot>
       </div>
     </div>
@@ -93,8 +93,10 @@ let propsData = defineProps(['imgsrc', "psgid"])
 
   -webkit-box-orient: vertical;
 
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp:3  ;
 
-  overflow: hidden;
+  overflow: inherit;
+  max-width:  500px; ;
+  height: 100px;
 }
 </style>

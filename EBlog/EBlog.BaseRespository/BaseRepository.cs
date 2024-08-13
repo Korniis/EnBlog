@@ -31,6 +31,8 @@ namespace EBlog.BaseRepository
         {
             return await _dbContext.Set<TEntity>().Where(expression).ToListAsync();
         }
+
+
         public virtual async Task<TEntity> SelectOneAsync(Expression<Func<TEntity, bool>> expression)
         {
             return await _dbContext.Set<TEntity>().FirstOrDefaultAsync(expression);

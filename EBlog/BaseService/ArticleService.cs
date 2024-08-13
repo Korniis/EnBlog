@@ -19,5 +19,10 @@ namespace EBlog.BaseService
             _articleRepository = articleRepository;
 
         }
+
+        public Task<List<Article>> SelectAllByPageAsync(int skip, Expression<Func<Article, bool>> expression = null, Expression<Func<Article, object>> order = null)
+        {
+            return _articleRepository.SelectAllByPageAsync(skip, expression, order);
+        }
     }
 }

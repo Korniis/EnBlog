@@ -51,6 +51,5 @@ namespace EBlog.IBaseRepository
         /// <returns></returns>
         public Task<List<TEntity>> SelectAllAsync(Expression<Func<TEntity, bool>> expression);
 
-
     }
 }

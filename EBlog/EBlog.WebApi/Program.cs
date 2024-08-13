@@ -13,6 +13,8 @@ using EBlog.BaseRepository;
 using EBlog.IBaseService;
 using EBlog.BaseService;
 using EBlog.Utility.DTO;
+using Microsoft.AspNetCore.Mvc;
+using EBlog.WebApi.Fliters;
 namespace EBlog.WebApi
 {
     public class Program
@@ -50,6 +52,16 @@ namespace EBlog.WebApi
                 opt.UseMySql(connStr, new MySqlServerVersion(new Version(8, 6, 20)));
             });
             builder.Services.AddCustomIOC();
+            builder.Services.Configure<MvcOptions>(opt => {
+
+                opt.Filters.Add<JwtVersionCheckFilter>();
+                opt.Filters.Add<EmailCheckFilter>();
+            });
+            builder.Services.AddStackExchangeRedisCache(opt =>
+            {
+                opt.Configuration = "127.0.0.1";
+                opt.InstanceName = "blog_";
+            });
             builder.Services.AddAutoMapper(typeof(DTOMapper));
             builder.Services.AddIdentityIOC(builder.Configuration);
             string[] urls = new[] { "http://localhost:5173" };
@@ -65,7 +77,7 @@ namespace EBlog.WebApi
             }
             app.UseCors();
             app.UseHttpsRedirection();
-            app.UseAuthentication();
+            app.UseAuthentication(); //¼øÈ¨
             app.UseAuthorization();
             app.MapControllers();
             app.Run();
@@ -108,7 +120,8 @@ namespace EBlog.WebApi
                 .AddDefaultTokenProviders()
                 .AddRoleManager<RoleManager<Role>>()
                 .AddUserManager<UserManager<User>>();
-            services.Configure<JWTOptions>(Configuration.GetSection("JWT"));
+             services.Configure<JWTOptions>(Configuration.GetSection("JWT"));
+            var jwtOpt = Configuration.GetSection("JWT");
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(x =>
             {
@@ -117,11 +130,16 @@ namespace EBlog.WebApi
                 var secKey = new SymmetricSecurityKey(keyBytes);
                 x.TokenValidationParameters = new()
                 {
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
+                    ValidateIssuer = true,
+                    ValidIssuer = jwtOpt.Issuer,
+                    ValidateAudience = true,
+                    ValidAudience = jwtOpt.Audience,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = secKey
+                    IssuerSigningKey = secKey,
+                    ClockSkew = TimeSpan.FromSeconds(jwtOpt.ExpireSeconds)
+
+
                 };
             });
             return services;

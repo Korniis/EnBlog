@@ -3,6 +3,7 @@ using EBlog.Domain.DTO;
 using EBlog.Domain.Entities;
 using EBlog.IBaseService;
 using EBlog.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -23,8 +24,11 @@ namespace EBlog.WebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<ApiResult>> GetArticleTypes()
         {
+            Console.WriteLine(this.User);
+
             List<ArticleType> articleTypes = await _ArticleTypeService.SelectAllAsync();
             if (articleTypes.Count == 0)
             {

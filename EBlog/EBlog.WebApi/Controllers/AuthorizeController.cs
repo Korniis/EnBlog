@@ -1,12 +1,20 @@
 ﻿using EBlog.Domain.Entities;
 using EBlog.IBaseService;
 using EBlog.Utility;
+using EBlog.WebApi.Attributes;
 using EBlog.WebApi.Helper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Options;
-
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using System.Text.Json;
 namespace EBlog.WebApi.Controllers
 {
     [Route("api/[controller]/[action]")]
@@ -16,19 +24,19 @@ namespace EBlog.WebApi.Controllers
         private readonly IOptionsSnapshot<JWTOptions> _settings;
         private readonly IUserService _userService;
         private readonly UserManager<User> _userManager;
-
-        public AuthorizeController(IOptionsSnapshot<JWTOptions> settings, IUserService userService, UserManager<User> userManager)
+        private readonly IDistributedCache _distributedCache;
+        public AuthorizeController(IDistributedCache distributedCache, IOptionsSnapshot<JWTOptions> settings, IUserService userService, UserManager<User> userManager)
         {
             _settings = settings;
             _userService = userService;
             _userManager = userManager;
+            _distributedCache = distributedCache;
         }
-
         [HttpPost]
+        [NotCheckJwtVersion]
         public async Task<ActionResult<ApiResult>> Login(CheckRequestInfo info)
         {
-            User user = await _userService.SelectOneAsync(x => x.UserName == info.userName);
-
+            User user = await _userManager.Users.SingleOrDefaultAsync(x => x.UserName == info.userName);
             if (user == null)
             {
                 return ApiResultHelper.Error("用户名或密码错误");
@@ -36,23 +44,41 @@ namespace EBlog.WebApi.Controllers
             if (await _userManager.IsLockedOutAsync(user))
             {
                 return ApiResultHelper.Error($"用户{info.userName}被冻结");
-
             }
             bool result = await _userManager.CheckPasswordAsync(user, info.userPwd);
             if (result)
             {
-
                 await _userManager.ResetAccessFailedCountAsync(user);
+                user.JwtVersion++;
+                await _userManager.UpdateAsync(user);
                 //令牌设计
-                //1.声明playlod
-
-
+                //1.声明payload
+                List<Claim> claims = new List<Claim>()
+                {
+                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                 new Claim (ClaimTypes.Name,user.UserName),
+                  new ("JwtVersion",user.JwtVersion.ToString())
+                };
+                var roles = await _userManager.GetRolesAsync(user);
+                foreach (var role in roles)
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, role));
+                }
                 //2.生成jwt
-
-                return null;
+                string key = _settings.Value.SigningKey;
+                DateTime dateTime = DateTime.Now.AddSeconds(_settings.Value.ExpireSeconds);
+                byte[] sceBytes = Encoding.UTF8.GetBytes(key);
+                SymmetricSecurityKey sceKey = new SymmetricSecurityKey(sceBytes);
+                SigningCredentials credentials = new SigningCredentials(sceKey, SecurityAlgorithms.HmacSha256Signature);
+                JwtSecurityToken securityToken = new JwtSecurityToken(claims: claims,
+                    expires: dateTime,
+                    issuer: _settings.Value.Issuer,
+                    audience: _settings.Value.Audience,
+                    signingCredentials: credentials
+                    );
+                string jwt = new JwtSecurityTokenHandler().WriteToken(securityToken);
                 //3.返回jwt
-                // return ApiResultHelper.Success();
-
+                return ApiResultHelper.Success(jwt);
             }
             else//登陆失败
             {
@@ -60,11 +86,97 @@ namespace EBlog.WebApi.Controllers
                 await _userManager.AccessFailedAsync(user);
                 int v = await _userManager.GetAccessFailedCountAsync(user);
                 return ApiResultHelper.Error($"用户名或密码错误再输入{5 - v}次锁定");
+            }
+        }
+        [HttpPost]
+        [NotCheckJwtVersion]
+        public async Task<ActionResult<ApiResult>> SendRegisterCode(CheckRequestInfo requestInfo, string emailAddress)
+        {
+            var userName = requestInfo.userName;
+            var password = requestInfo.userPwd;
+            //  var user  await   _userManager.Users(x => x.UserName == userName);
+            var user = await _userManager.FindByNameAsync(userName);
 
+            if (user is  null)
+            {
+
+                user = new User()
+                {
+                    Email = emailAddress,
+                    UserName = userName
+                };
+                var b = await _userManager.CreateAsync(user, password);
+                if (!b.Succeeded)
+                {
+                    var customErrors = b.Errors.Select(e =>
+                    {
+                        if (e.Code == "DuplicateUserName")
+                        {
+                            e.Description = "用户名已存在，请选择其他用户名。";
+                        }
+                        else if (e.Code == "PasswordTooShort")
+                        {
+                            e.Description = "密码太短，请选择一个至少6位字符的密码。";
+                        }
+                        // 添加更多自定义处理逻辑
+                        return e.Description;
+                    });
+                    var errors = string.Join(", ", customErrors);
+                    return ApiResultHelper.Error($"创建用户失败" + errors);
+                }
+                await _userManager.AddToRoleAsync(user, "Normal");
+
+            }
+            if (user.EmailConfirmed)
+                return ApiResultHelper.Error("该用户已创建请返回登录");
+          
+
+            string confirmcode = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+
+
+            var isSend = await SMTPHelper.UseSmtpAsync(user.Email, "注册码", confirmcode);
+
+            if (isSend)
+            {
+                return ApiResultHelper.Success("创建成功");
+            }
+            else
+            {
+
+                return ApiResultHelper.Error("请重试");
             }
 
 
 
         }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<ActionResult<ApiResult>> SendResetToken()
+        {
+            Claim? UserId = this.User.FindFirst(ClaimTypes.NameIdentifier);
+            if (UserId == null)
+            {
+                return ApiResultHelper.Error("请登录");
+            }
+            var Ruser = await _userManager.FindByIdAsync(UserId.Value);
+            if (Ruser == null)
+            {
+                return ApiResultHelper.Error("发送失败");
+            }
+
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(Ruser);
+            // 发送信息
+
+            // SMSHelper.UseSMS("18353146519", token);
+
+            await _distributedCache.SetStringAsync($"sms_{Ruser.Id}", JsonSerializer.Serialize(token), new DistributedCacheEntryOptions()
+            {
+                AbsoluteExpiration = DateTimeOffset.UtcNow.AddMinutes(5)
+            });
+
+            return ApiResultHelper.Success(token);
+        }
     }
- }
+}

@@ -23,11 +23,11 @@ export default defineConfig({
         secure: false,
         rewrite: path => path.replace(/^\/api/, ''), // 将请求地址中的 /ok 替换成空
 
-        // bypass(req, res, options) {
-        //   const realUrl = options.target + (options.rewrite ? options.rewrite(req.url) : '');
-        //   console.log(realUrl); // 在终端显示
-        //   res.setHeader('A-Real-Url', realUrl);
-       // }
+        bypass(req, res, options) {
+          const realUrl = options.target + (options.rewrite ? options.rewrite(req.url) : '');
+          console.log(realUrl); // 在终端显示
+          res.setHeader('A-Real-Url', realUrl);
+        }
       }
     }
   }

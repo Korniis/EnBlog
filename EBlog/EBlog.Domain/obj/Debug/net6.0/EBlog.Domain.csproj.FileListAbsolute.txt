@@ -21,9 +21,9 @@ D:\JAVA\Demo_OnWork\EBlog\EBlog.Domain\obj\Debug\net6.0\EBlog.Domain.GeneratedMS
 D:\JAVA\Demo_OnWork\EBlog\EBlog.Domain\obj\Debug\net6.0\EBlog.Domain.AssemblyInfoInputs.cache
 D:\JAVA\Demo_OnWork\EBlog\EBlog.Domain\obj\Debug\net6.0\EBlog.Domain.AssemblyInfo.cs
 D:\JAVA\Demo_OnWork\EBlog\EBlog.Domain\obj\Debug\net6.0\EBlog.Domain.csproj.CoreCompileInputs.cache
+D:\JAVA\Demo_OnWork\EBlog\EBlog.Domain\obj\Debug\net6.0\EBlog.Domain.sourcelink.json
 D:\JAVA\Demo_OnWork\EBlog\EBlog.Domain\obj\Debug\net6.0\EBlog.Domain.dll
 D:\JAVA\Demo_OnWork\EBlog\EBlog.Domain\obj\Debug\net6.0\refint\EBlog.Domain.dll
 D:\JAVA\Demo_OnWork\EBlog\EBlog.Domain\obj\Debug\net6.0\EBlog.Domain.pdb
 D:\JAVA\Demo_OnWork\EBlog\EBlog.Domain\obj\Debug\net6.0\EBlog.Domain.genruntimeconfig.cache
 D:\JAVA\Demo_OnWork\EBlog\EBlog.Domain\obj\Debug\net6.0\ref\EBlog.Domain.dll
-D:\JAVA\Demo_OnWork\EBlog\EBlog.Domain\obj\Debug\net6.0\EBlog.Domain.sourcelink.json

@@ -1,9 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "PDixuAstJYo=",
+  "dgSpecHash": "874A0KrsPOM=",
   "success": true,
   "projectFilePath": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.Utility\\EBlog.Utility.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\14256\\.nuget\\packages\\alibabacloud.endpointutil\\0.1.1\\alibabacloud.endpointutil.0.1.1.nupkg.sha512",
+    "C:\\Users\\14256\\.nuget\\packages\\alibabacloud.gatewayspi\\0.0.2\\alibabacloud.gatewayspi.0.0.2.nupkg.sha512",
+    "C:\\Users\\14256\\.nuget\\packages\\alibabacloud.openapiclient\\0.1.10\\alibabacloud.openapiclient.0.1.10.nupkg.sha512",
+    "C:\\Users\\14256\\.nuget\\packages\\alibabacloud.openapiutil\\1.1.1\\alibabacloud.openapiutil.1.1.1.nupkg.sha512",
+    "C:\\Users\\14256\\.nuget\\packages\\alibabacloud.sdk.dysmsapi20170525\\3.0.0\\alibabacloud.sdk.dysmsapi20170525.3.0.0.nupkg.sha512",
+    "C:\\Users\\14256\\.nuget\\packages\\alibabacloud.teautil\\0.1.18\\alibabacloud.teautil.0.1.18.nupkg.sha512",
+    "C:\\Users\\14256\\.nuget\\packages\\alibabacloud.teaxml\\0.0.5\\alibabacloud.teaxml.0.0.5.nupkg.sha512",
+    "C:\\Users\\14256\\.nuget\\packages\\aliyun.credentials\\1.3.2\\aliyun.credentials.1.3.2.nupkg.sha512",
     "C:\\Users\\14256\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\14256\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\14256\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
@@ -25,6 +33,7 @@
     "C:\\Users\\14256\\.nuget\\packages\\microsoft.aspnetcore.routing\\2.2.0\\microsoft.aspnetcore.routing.2.2.0.nupkg.sha512",
     "C:\\Users\\14256\\.nuget\\packages\\microsoft.aspnetcore.routing.abstractions\\2.2.0\\microsoft.aspnetcore.routing.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\14256\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
+    "C:\\Users\\14256\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\14256\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.1.0\\microsoft.dotnet.platformabstractions.2.1.0.nupkg.sha512",
     "C:\\Users\\14256\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.32\\microsoft.entityframeworkcore.6.0.32.nupkg.sha512",
     "C:\\Users\\14256\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.32\\microsoft.entityframeworkcore.abstractions.6.0.32.nupkg.sha512",
@@ -92,7 +101,8 @@
     "C:\\Users\\14256\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
     "C:\\Users\\14256\\.nuget\\packages\\system.threading\\4.0.11\\system.threading.4.0.11.nupkg.sha512",
     "C:\\Users\\14256\\.nuget\\packages\\system.threading.tasks\\4.0.11\\system.threading.tasks.4.0.11.nupkg.sha512",
-    "C:\\Users\\14256\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512"
+    "C:\\Users\\14256\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
+    "C:\\Users\\14256\\.nuget\\packages\\tea\\1.1.2\\tea.1.1.2.nupkg.sha512"
   ],
   "logs": []
 }

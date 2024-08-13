@@ -40,7 +40,7 @@
                 <div class=boxLcontent>
                     <div class=iscenter>
                         <div class=imgcard>
-                            <img src="../../../avator/avator.png">
+                            <img src="../../public/avator/avator.png">
                         </div>
                         <div class="infoname">
                             EnBoWer
@@ -84,22 +84,22 @@
 </template>
 <script setup>
 import { computed, onMounted, reactive } from 'vue';
-import { useUserStore } from '@/stores/counter';
+import { useUser } from '@/stores/counter';
 import axios from '../api/index';
 import { storeToRefs } from 'pinia';
 import { ElMessage } from 'element-plus';
-const user_store = useUserStore()
-const {
+const user_store = useUser()
+// const {
 
-    psgCoutNum,
-    psgTagNum,
-    psgSortNum,
-} = storeToRefs(user_store)
+//     psgCoutNum,
+//     psgTagNum,
+//     psgSortNum,
+// } = storeToRefs(user_store)
 let pageData = reactive({
 
-    psgCoutNum: user_store.psgCoutNum,
-    psgTagNum: user_store.psgTagNum,
-    psgSortNum: user_store.psgSortNum,
+    // psgCoutNum: user_store.psgCoutNum,
+    // psgTagNum: user_store.psgTagNum,
+    // psgSortNum: user_store.psgSortNum,
 
 
 
@@ -107,7 +107,7 @@ let pageData = reactive({
 });
 let propsData = defineProps(["pid"])
 let psgArt = reactive({
-    id: 1,
+    id: 0,
     title: "",
     content: "",
     createdDate: "",
@@ -116,23 +116,24 @@ let psgArt = reactive({
 
 onMounted(() => {
     psgArt.id=propsData.pid;
-    axios.get(`api/Blog/SelectArtcleById/${psgArt.id}`
+    axios.get(`api/Article/GetArticleById/${psgArt.id}`
 
 
     ).then(res => {
         if(res==null)
     {
-        ElMessage()
+        ElMessage("无信息")
     }
+    res=res.data
         psgArt.id = res.data.id;
         psgArt.title = res.data.title;
         psgArt.content = res.data.content;
-        psgArt.createdDate = res.data.createdDate;
-        psgArt.readCount = res.data.readCount;
+        psgArt.createdDate = res.data.createTime;
+        psgArt.readCount = res.data.viewCount;
         console.log(psgArt);
 
     }).catch(err => {
-        ElMessage.error(err.response.data);
+        ElMessage.error(err.response);
         console.log(err);
     })
 

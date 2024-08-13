@@ -1,4 +1,0 @@
-<template>
-
-    lay
-</template>

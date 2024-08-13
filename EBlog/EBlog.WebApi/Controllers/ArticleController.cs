@@ -4,6 +4,7 @@ using EBlog.Domain.DTO;
 using EBlog.Domain.Entities;
 using EBlog.IBaseService;
 using EBlog.Utility;
+using EBlog.WebApi.Attributes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -40,6 +41,24 @@ namespace EBlog.WebApi.Controllers
 
             return ApiResultHelper.Success(articleDTOs);
         }
+        [HttpGet("{id}")]
+        [NotCheckJwtVersion]
+        public async Task<ActionResult<ApiResult>> GetArticleById(int id)
+        {
+            Article article = await _articleService.SelectOneByIdAsync(id);
+            if (article == null)
+            {
+                return ApiResultHelper.Error("未找到该篇文章");
+
+            }
+            ArticleDTO articleDTO = mapper.Map<ArticleDTO>(article);
+
+            return ApiResultHelper.Success(articleDTO);
+
+
+
+        }
+
         [HttpPost]
         public async Task<ActionResult<ApiResult>> CreateArticle(string title, string content, long tid)
         {

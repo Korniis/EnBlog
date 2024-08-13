@@ -2,7 +2,7 @@
     <el-header class="header">
         <div class="headerinside">
             <div class="infobar">
-                <a style="height: 60px;" href="">
+                <a style="height: 60px;" href="/">
                     <img style="height: 60px; width: auto;" src="/Title.ico">
                 </a>
 
@@ -10,8 +10,8 @@
             </div>
             <div style="display: flex;  ">
                 <el-avatar :size="50" style="margin: auto 5px;" />
-                <el-button style="margin: auto 5px;" type="primary">登录</el-button>
-                <el-button style="margin: auto 5px;">注册</el-button>
+                <el-button style="margin: auto 5px;" type="primary"  @click = "router.push('/Login')" >登录</el-button>
+                <el-button style="margin: auto 5px;"  @click="router.push('/Register')" >注册</el-button>
             </div>
         </div>
 
@@ -22,6 +22,7 @@
 </template>
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import router from './router';
 
 </script>
 <style>
