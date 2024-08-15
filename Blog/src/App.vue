@@ -10,8 +10,8 @@
             </div>
             <div style="display: flex;  ">
                 <el-avatar :size="50" style="margin: auto 5px;" />
-                <el-button style="margin: auto 5px;" type="primary"  @click = "router.push('/Login')" >登录</el-button>
-                <el-button style="margin: auto 5px;"  @click="router.push('/Register')" >注册</el-button>
+                <el-button style="margin: auto 5px;" type="primary" @click="router.push('/Login')">登录</el-button>
+                <el-button style="margin: auto 5px;" @click="router.push('/Register')">注册</el-button>
             </div>
         </div>
 

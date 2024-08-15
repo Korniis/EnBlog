@@ -7,5 +7,7 @@ using System.Threading.Tasks;
 namespace EBlog.Utility
 {
     public record CheckRequestInfo(string userName, string userPwd);
- 
+    public record CheckEmailInfo(string userName, string userPwd, string emailAddress, string? code);
+
+
 }

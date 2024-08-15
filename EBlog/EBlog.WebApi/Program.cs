@@ -46,22 +46,20 @@ namespace EBlog.WebApi
                 requirement[scheme] = new List<string>();
                 c.AddSecurityRequirement(requirement);
             });
+
             builder.Services.AddDbContext<UserDbContext>(opt =>
             {
                 string connStr = builder.Configuration.GetConnectionString("Default");
                 opt.UseMySql(connStr, new MySqlServerVersion(new Version(8, 6, 20)));
             });
+            builder.Services.AddCustomRedis();
             builder.Services.AddCustomIOC();
             builder.Services.Configure<MvcOptions>(opt => {
 
                 opt.Filters.Add<JwtVersionCheckFilter>();
                 opt.Filters.Add<EmailCheckFilter>();
             });
-            builder.Services.AddStackExchangeRedisCache(opt =>
-            {
-                opt.Configuration = "127.0.0.1";
-                opt.InstanceName = "blog_";
-            });
+           
             builder.Services.AddAutoMapper(typeof(DTOMapper));
             builder.Services.AddIdentityIOC(builder.Configuration);
             string[] urls = new[] { "http://localhost:5173" };
@@ -85,6 +83,15 @@ namespace EBlog.WebApi
     }
     public static class IOCExtend
     {
+        public static IServiceCollection AddCustomRedis( this IServiceCollection services)
+        {
+            services.AddStackExchangeRedisCache(opt =>
+            {
+                opt.Configuration = "127.0.0.1";
+                opt.InstanceName = "blog_";
+            });
+           return services;
+        }
         public static IServiceCollection AddCustomIOC(this IServiceCollection services)
         {   //²Ö´¢²ã
             services.AddScoped<IArticleRepository, ArticleRepository>();

@@ -9,8 +9,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
+using StackExchange.Redis;
 using System.Net.WebSockets;
 using System.Security.Claims;
+using System.Text;
 using System.Text.Json;
 namespace EBlog.WebApi.Controllers
 {
@@ -19,14 +21,16 @@ namespace EBlog.WebApi.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-        private readonly IMapper mapper;
+        private readonly IMapper _mapper;
         private readonly IDistributedCache _distributedCache;
         private readonly UserManager<User> _userManager;
-        private readonly RoleManager<Role> _roleManager;
-        public UserController(IUserService userService, IMapper mapper, UserManager<User> userManager, RoleManager<Role> roleManager)
+        private readonly RoleManager<Domain.Entities.Role> _roleManager;
+        private readonly IDatabase redisdb;
+        public UserController(IUserService userService, IMapper mapper, IDistributedCache distributedCache, UserManager<User> userManager, RoleManager<Domain.Entities.Role> roleManager)
         {
             _userService = userService;
-            this.mapper = mapper;
+            _mapper = mapper;
+            _distributedCache = distributedCache;
             _userManager = userManager;
             _roleManager = roleManager;
         }
@@ -41,7 +45,7 @@ namespace EBlog.WebApi.Controllers
             List<UserDTO> userDTOs = new List<UserDTO>();
             foreach (var item in data)
             {
-                userDTOs.Add(mapper.Map<UserDTO>(item));
+                userDTOs.Add(_mapper.Map<UserDTO>(item));
             }
             return ApiResultHelper.Success(userDTOs);
         }
@@ -67,7 +71,7 @@ namespace EBlog.WebApi.Controllers
                     return e.Description;
                 });
                 var errors = string.Join(", ", customErrors);
-                return ApiResultHelper.Error($"创建用户失败"+ errors);
+                return ApiResultHelper.Error($"创建用户失败" + errors);
             }
             //添加角色
             if (!await _userManager.IsInRoleAsync(user, "Normal"))
@@ -78,21 +82,29 @@ namespace EBlog.WebApi.Controllers
         }
         [HttpPost]
         [NotCheckJwtVersion]
-        public async Task<ActionResult<ApiResult>> Register(CheckRequestInfo requestInfo,string email ,string code)
-        {
-            var user = await _userManager.FindByNameAsync(requestInfo.userName);
-            if (user == null)
+        public async Task<ActionResult<ApiResult>> Register(CheckEmailInfo requestInfo)
+        {   var email = requestInfo.emailAddress;
+            var code = requestInfo.code;
+            var name = requestInfo.userName;
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null||user.UserName!=name)
             {
-            return ApiResultHelper.Error("验证错误请重试");
-
+                return ApiResultHelper.Error("验证错误请重试");
             }
+            
+            //  var storedCode = await _distributedCache.GetAsync($"reg_{user.Email}");
+            var storedCode = JsonSerializer.Deserialize<string>(await _distributedCache.GetAsync($"reg_{user.Email}"));
+            // var storedCode = await redisdb.HashGetAsync($"reg_{user.Email}", "data");
+            /*    if (code != storedCode)
+                  {
+                      return ApiResultHelper.Error("验证错误或超时请重试");
+                  }*/
             IdentityResult emailConfirm = await _userManager.ConfirmEmailAsync(user, code);
-            if (emailConfirm.Succeeded) {
-
+            if (emailConfirm.Succeeded)
+            {
                 return ApiResultHelper.Success("验证成功");
             }
             return ApiResultHelper.Error("验证错误请重试");
-           
         }
         [HttpPut]
         [Authorize]
@@ -134,11 +146,8 @@ namespace EBlog.WebApi.Controllers
             if (!RPResult.Succeeded)
             {
                 return ApiResultHelper.Error("修改失败检查，请验证码正不正确");
-
             }
-
             return ApiResultHelper.Error("修改失败");
-
         }
     }
 }

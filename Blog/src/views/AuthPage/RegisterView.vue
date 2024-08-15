@@ -22,12 +22,13 @@
 
 
         </el-form-item> -->
-        <el-form-item label="邮箱地址:" prop="email"  style="">
+        <el-form-item label="邮箱地址:" prop="email" style="">
           <el-input v-model="ruleForm.email" placeholder="请输入" style="width: 290px;" />
 
-          <el-button style="margin-left: auto; " type="primary" @click="validateAndSendCode()"> 发送验证码</el-button>
+          <el-button style="margin-left: auto; " type="primary" @click="validateAndSendCode(ruleFormRef)">
+            发送验证码</el-button>
         </el-form-item>
-        <el-form-item label="验证码:" prop="vildcode"  style="">
+        <el-form-item label="验证码:" prop="vildcode" style="">
           <el-input v-model="ruleForm.vildcode" placeholder="请输入" />
 
         </el-form-item>
@@ -50,17 +51,18 @@
 <script setup>
 
 import { ElMessage } from 'element-plus';
-import { ref } from 'vue'
-
+import { ref, reactive } from 'vue'
+import useUser from '@/stores/counter';
+import router from '@/router';
 const ruleFormRef = ref(null)   // 注意：一定要定义 form 表单中 ref 的 ruleFormRef 的值，否则会一直报错;
 
-const ruleForm = ref({
+const ruleForm = reactive({
   passWord: "",
   checkPassWord: "",
   name: '',
   email: '',
   agree: '',
-  vildcode:''
+  vildcode: ''
 })
 
 
@@ -69,14 +71,14 @@ const resetForm = (val) => {
   if (!val) return
   val.resetFields()  // resetFields 函数：是将表单字段的值重置为其默认值;
 }
-
+const useStore = useUser();
 
 // Password 的规则是：让 Password 的输入值，不能为空，且若 checkPassWord 的输入值不为空时，在 Password 的输入值后在执行一遍 checkPassWord 的规则;
 const validatePass = (rule, value, callback) => {
   if (value === '') {  // 此时是判空，如果 Password 中为空，就抛出该提示信息;
     callback(new Error('请输入密码'))
   } else {
-    if (ruleForm.value.checkPassWord !== '') {  // 此时是：判断 checkPassWord 输入的值是否为空;
+    if (ruleForm.checkPassWord !== '') {  // 此时是：判断 checkPassWord 输入的值是否为空;
       if (!ruleFormRef.value) return  // 只要 checkPassWord 中有输入，此时的 !ruleFormRef.value 的布尔值为 false;
       ruleFormRef.value.validateField('checkPassWord', () => null) // validateField 是用于对表单中的字段进行验证的方法，来确保数据的正确性;
       // 个人理解是：在 checkPassWord 中有输入与 Password 的输入对比的操作，因此可以理解为：对 'checkPassWord'
@@ -91,7 +93,7 @@ const validatePass = (rule, value, callback) => {
 const validatePass2 = (rule, value, callback) => {
   if (value === '') {  // 此时是判空，如果 checkPassWord 中为空，就抛出该提示信息;
     callback(new Error('请重复密码'))
-  } else if (value !== ruleForm.value.passWord) { // 此时是：判断 checkPassWord 输入的值是否与 Password 输入的值相同，若不相同，就抛出该提示信息;
+  } else if (value !== ruleForm.passWord) { // 此时是：判断 checkPassWord 输入的值是否与 Password 输入的值相同，若不相同，就抛出该提示信息;
     callback(new Error("两次设置密码不一样"))
   } else { // 只有 checkPassWord 输入的值与 Password 输入的值相同，才没问题(前提是：Passwork 与 checkPassWord 中都有值);
     callback()
@@ -163,7 +165,7 @@ const rules = ref({
   // ],
   name: [
     { required: true, message: '用户名 不能为空', trigger: 'blur' },       // 此时是防空判断;
-    { min: 7, max: 11, message: '长度在 7 到 11 个字符', trigger: 'blur' }  // 此时是：判断输入值是否是 7~11 位(即：name 的校验规则);
+    { min: 4, max: 20, message: '长度在 4 到 20 个字符', trigger: 'blur' }  // 此时是：判断输入值是否是 7~11 位(即：name 的校验规则);
   ],
   // ip: [
   //   { required: true, message: 'IP不能为空', trigger: 'blur' },
@@ -189,48 +191,39 @@ const rules = ref({
     }
   ],
   vildcode:
-  [
+    [
 
       { required: true, message: '验证码不能为空', trigger: 'blur' },
 
-  ]
+    ]
 })
 
-const validateAndSendCode = () => {
-  ruleFormRef.value.validateField('email', emailValid => {
-    if (emailValid) {
-      ruleFormRef.value.validateField('name', nameValid => {
-        if (nameValid) {
-          ruleFormRef.value.validateField('passWord', passValid => {
-            if (passValid) {
-              ElMessage.success('验证码已发送');
-              // 在这里添加发送验证码的逻辑
-            } else {
-              ElMessage.error('请检查密码输入');
-            }
-          });
-        } else {
-          ElMessage.error('请检查用户名输入');
-        }
-      });
-    } else {
-      ElMessage.error('请填写有效的邮箱地址');
-    }
-  });
+const validateAndSendCode = async () => {
+
+  await ruleFormRef.value.validateField('email');
+  await ruleFormRef.value.validateField('name');
+  await ruleFormRef.value.validateField('passWord');
+
+  await useStore.sendEmailCheck(ruleForm);
 };
 // 此时是：提交表单的操作;
-const submitForm = () => {
-  if (!ruleFormRef.value) return
-  ruleFormRef.value.validate((valid) => {  // 注意：此时使用的是 ruleFormRef.value，而仅写 ruleFormRef 是拿不到值且会报错的;
-    if (valid) {   // 注意：只有当所有的规则都满足后，此时的 valid 的值才为 true，才能执行下面的值;
-      ElMessage.success('submit!')
-    } else {
-      ElMessage.error('error submit!')
-      return false
-    }
-  })
+const submitForm = async () => {
+  if (!ruleFormRef.value) return;
 
-}
+  try {
+    const valid = await ruleFormRef.value.validate();  // 基于 Promise 的验证
+
+    if (valid) {
+      await useStore.checkEmailCheck(ruleForm);  // 异步操作
+      router.push('/Login');  // 路由跳转
+    } else {
+      ElMessage.error('Error submit!');
+    }
+  } catch (error) {
+    ElMessage.error('Validation failed or something went wrong!');
+  }
+};
+
 
 </script>
 

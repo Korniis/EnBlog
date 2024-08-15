@@ -12,6 +12,7 @@ using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
@@ -90,52 +91,72 @@ namespace EBlog.WebApi.Controllers
         }
         [HttpPost]
         [NotCheckJwtVersion]
-        public async Task<ActionResult<ApiResult>> SendRegisterCode(CheckRequestInfo requestInfo, string emailAddress)
+        public async Task<ActionResult<ApiResult>> SendRegisterCode(CheckEmailInfo requestInfo)
         {
             var userName = requestInfo.userName;
             var password = requestInfo.userPwd;
+            var emailAddress = requestInfo.emailAddress;
             //  var user  await   _userManager.Users(x => x.UserName == userName);
-            var user = await _userManager.FindByNameAsync(userName);
-
-            if (user is  null)
+            var user = await _userManager.FindByEmailAsync(emailAddress);
+            IdentityResult b;
+            if (user is not null)
             {
+                if (user.EmailConfirmed)
+                    return ApiResultHelper.Error("该邮箱已被创建请返回登录");
+                user.Email = emailAddress;
+                user.UserName = userName;
+                await _userManager.RemovePasswordAsync(user);
+                await _userManager.AddPasswordAsync(user, password);
+                b = await _userManager.UpdateAsync(user);
+                if (!b.Succeeded)
+                {
+                    return ApiResultHelper.Error("请重试");
+                }
 
+            }
+            else
+            {
                 user = new User()
                 {
                     Email = emailAddress,
                     UserName = userName
                 };
-                var b = await _userManager.CreateAsync(user, password);
-                if (!b.Succeeded)
-                {
-                    var customErrors = b.Errors.Select(e =>
-                    {
-                        if (e.Code == "DuplicateUserName")
-                        {
-                            e.Description = "用户名已存在，请选择其他用户名。";
-                        }
-                        else if (e.Code == "PasswordTooShort")
-                        {
-                            e.Description = "密码太短，请选择一个至少6位字符的密码。";
-                        }
-                        // 添加更多自定义处理逻辑
-                        return e.Description;
-                    });
-                    var errors = string.Join(", ", customErrors);
-                    return ApiResultHelper.Error($"创建用户失败" + errors);
-                }
-                await _userManager.AddToRoleAsync(user, "Normal");
+                b = await _userManager.CreateAsync(user, password);
+
 
             }
-            if (user.EmailConfirmed)
-                return ApiResultHelper.Error("该用户已创建请返回登录");
-          
+
+
+            if (!b.Succeeded)
+            {
+                var customErrors = b.Errors.Select(e =>
+                {
+                    if (e.Code == "DuplicateUserName")
+                    {
+                        e.Description = "用户名已存在，请选择其他用户名。";
+                    }
+                    else if (e.Code == "PasswordTooShort")
+                    {
+                        e.Description = "密码太短，请选择一个至少6位字符的密码。";
+                    }
+                    // 添加更多自定义处理逻辑
+                    return e.Description;
+                });
+                var errors = string.Join(", ", customErrors);
+                return ApiResultHelper.Error($"创建用户失败" + errors);
+            }
+            await _userManager.AddToRoleAsync(user, "Normal");
+
 
             string confirmcode = await _userManager.GenerateEmailConfirmationTokenAsync(user);
 
 
-            var isSend = await SMTPHelper.UseSmtpAsync(user.Email, "注册码", confirmcode);
+            var isSend = true;//await SMTPHelper.UseSmtpAsync(user.Email, "注册码", confirmcode);
 
+            await _distributedCache.SetStringAsync($"reg_{user.Email}", JsonSerializer.Serialize(confirmcode), new DistributedCacheEntryOptions()
+            {
+                AbsoluteExpiration = DateTimeOffset.UtcNow.AddMinutes(5)
+            });
             if (isSend)
             {
                 return ApiResultHelper.Success("创建成功");

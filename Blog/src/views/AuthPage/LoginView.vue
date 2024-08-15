@@ -94,8 +94,11 @@ const login = async () => {
         if (!valid) return ElMessage.error('请填写 登录信息 或 同意协议 再进行登录操作！');
         // 通过校验
         // 登录逻辑
-});
-    await userStore.login(loginForm);
+    });
+    let islogin = await userStore.login(loginForm);
+    if (islogin == false) {
+        return;
+    }
     router.push('/');
     ElMessage.success("登录成功");
 
