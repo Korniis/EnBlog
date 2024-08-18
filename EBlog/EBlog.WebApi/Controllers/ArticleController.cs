@@ -5,9 +5,12 @@ using EBlog.Domain.Entities;
 using EBlog.IBaseService;
 using EBlog.Utility;
 using EBlog.WebApi.Attributes;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+using System.Security.Cryptography;
 namespace EBlog.WebApi.Controllers
 {
     [Route("api/[controller]/[action]")]
@@ -17,18 +20,18 @@ namespace EBlog.WebApi.Controllers
         private readonly IArticleService _articleService;
         private readonly IMapper mapper;
 
-        public ArticleController(IArticleService articleService, IMapper mapper) 
+        public ArticleController(IArticleService articleService, IMapper mapper)
         {
             this.mapper = mapper;
             _articleService = articleService;
         }
 
-      
+
         [HttpGet]
         public async Task<ActionResult<ApiResult>> GetArticles()
         {
             List<Article> articles = await _articleService.SelectAllAsync();
-           // articles.ForEach(x => x.Type = null);
+            // articles.ForEach(x => x.Type = null);
             if (articles.Count == 0)
             {
                 return ApiResultHelper.Error("没有更多文章");
@@ -60,13 +63,19 @@ namespace EBlog.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<ApiResult>> CreateArticle(string title, string content, long tid)
+        [Authorize]
+        public async Task<ActionResult<ApiResult>> CreateArticle(CreateArticleInfo articleInfo)
         {
+            var title = articleInfo.title;
+            var content = articleInfo.content;
+            var tid = articleInfo.tid;
+            var userId = long.Parse(this.User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
             Article article = new Article()
             {
                 Title = title,
                 Content = content,
-                UserId = 1,
+                UserId = userId,
                 CreateTime = DateTime.Now,
                 TypeId = tid,
                 IsDeleted = false,
@@ -76,7 +85,7 @@ namespace EBlog.WebApi.Controllers
             bool result = await _articleService.CreateAsync(article);
             if (result)
             {
-                return ApiResultHelper.Success(article);
+                return ApiResultHelper.Success("创建成功");
             }
             return ApiResultHelper.Error("创建失败");
         }
@@ -89,7 +98,7 @@ namespace EBlog.WebApi.Controllers
                 return ApiResultHelper.Error("未找到删除目标");
             }
             del.IsDeleted = true;
-           bool delb= await _articleService.DeleteAsync(del);
+            bool delb = await _articleService.DeleteAsync(del);
             if (!delb)
             {
                 return ApiResultHelper.Error("删除操作失败");
@@ -97,10 +106,11 @@ namespace EBlog.WebApi.Controllers
             return ApiResultHelper.Success("删除成功");
         }
         [HttpPut]
-        public async Task<ActionResult<ApiResult>>  Edit (long id, string title, string content ,long tid )
+        public async Task<ActionResult<ApiResult>> Edit(long id, string title, string content, long tid)
         {
             var article = await _articleService.SelectOneByIdAsync(id);
-            if (article == null) {
+            if (article == null)
+            {
                 return ApiResultHelper.Error("未找到修改目标");
             }
             article.Title = title;

@@ -8,7 +8,7 @@
                 </el-form-item>
 
                 <el-form-item label="密码" prop="password">
-                    <el-input v-model="loginForm.password" placeholder="请输入密码" />
+                    <el-input v-model="loginForm.password" type ="password" placeholder="请输入密码" />
                 </el-form-item>
 
                 <el-form-item label-width="22px" prop="agree">

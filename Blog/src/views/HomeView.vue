@@ -55,8 +55,8 @@
 
                         </div>
                         <div class="boxR">
-                            <div class="boxRcontent">
-                                <div v-for="item in pageData.psgArt" :key="item">
+                            <div v-infinite-scroll="loadmore"   :infinite-scroll-disabled=pageData.isStop infinite-scroll-immediate=false class="boxRcontent">
+                                <div  style="overflow: auto" v-for="item in pageData.psgArt" :key="item">
                                     <show-box :psgid="item.id" imgsrc="../../public/artimg/image.png">
                                         <template #article-title>
                                             {{ item.title }}
@@ -90,9 +90,10 @@ import ShowBox from '../components/ShowBox.vue';
 import { useUser } from '@/stores/counter';
 import { storeToRefs } from 'pinia';
 
-import axios from 'axios';
+import axios from '@/api/index';
 
 import { dataType } from 'element-plus/es/components/table-v2/src/common';
+import { ElMessage } from 'element-plus';
 
 const user_store = useUser()
 const {
@@ -101,24 +102,42 @@ const {
     psgSortNum,
 } = storeToRefs(user_store)
 let pageData = reactive({
-
     psgCoutNum: user_store.psgCoutNum,
     psgTagNum: user_store.psgTagNum,
     psgSortNum: user_store.psgSortNum,
-
+    psgArt: [], // 存储文章列表
+    pageIndex: 1 ,// 当前页码
+    isStop:false
 
 });
 
 
+const loadmore = ()=>{
 
-
+    axios.get(`/api/MainView/GetArticle/${pageData.pageIndex}`)
+        .then(res => {
+            if (res.data.data && res.data.data.length > 0) {
+                // 将新加载的数据追加到现有的数据中
+                pageData.psgArt.push(...res.data.data);
+                // 页码自增
+                pageData.pageIndex += 1;
+            } else {
+                ElMessage.error("没有更多数据了");
+                pageData.isStop=true;
+            }
+        })
+        .catch(err => {
+            console.log(err);
+            ElMessage.error("加载数据时出错");
+        });
+}
 
 onMounted(() => {
 
 
     //头部header变色
 
-    axios.get('/api/MainView/GetArticle/0').then(res => {
+    axios.get(`/api/MainView/GetArticle/${0}`).then(res => {
         console.log(res.data)
         pageData.psgArt = res.data.data;
     }).catch(err => {

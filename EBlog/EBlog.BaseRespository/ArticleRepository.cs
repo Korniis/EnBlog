@@ -42,11 +42,26 @@ namespace EBlog.BaseRepository
         }
         public async Task<List<Article>> SelectAllByPageAsync(int skip, Expression<Func<Article, bool>> expression = null, Expression<Func<Article, object>> order = null)
         {
-            if (expression != null)
-                return await _dbContext.Articles.Where(expression).Skip(skip * 20).Take(20).Include(x => x.Type).Include(x => x.User).OrderByDescending(order).ToListAsync();
-            else
-                return await _dbContext.Articles.Skip(skip * 20).Take(20).Include(x => x.Type).Include(x => x.User).OrderByDescending(order).ToListAsync();
+            var query = _dbContext.Articles.AsQueryable();
 
+            // 过滤条件
+            if (expression != null)
+            {
+                query = query.Where(expression);
+            }
+
+            // 排序
+            if (order != null)
+            {
+                query = query.OrderByDescending(order);
+            }
+
+            // 分页
+            query = query.Skip(skip * 20).Take(20)
+                         .Include(x => x.Type)
+                         .Include(x => x.User);
+
+            return await query.ToListAsync();
         }
     }
 }

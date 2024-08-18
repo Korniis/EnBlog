@@ -105,8 +105,10 @@ namespace EBlog.WebApi.Controllers
                     return ApiResultHelper.Error("该邮箱已被创建请返回登录");
                 user.Email = emailAddress;
                 user.UserName = userName;
+                user.JwtVersion = 0;
                 await _userManager.RemovePasswordAsync(user);
                 await _userManager.AddPasswordAsync(user, password);
+
                 b = await _userManager.UpdateAsync(user);
                 if (!b.Succeeded)
                 {
@@ -119,7 +121,8 @@ namespace EBlog.WebApi.Controllers
                 user = new User()
                 {
                     Email = emailAddress,
-                    UserName = userName
+                    UserName = userName,
+                    JwtVersion = 0
                 };
                 b = await _userManager.CreateAsync(user, password);
 

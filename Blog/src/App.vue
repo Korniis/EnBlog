@@ -8,10 +8,14 @@
 
                 <h2 class="style_h2">EnBoWer</h2>
             </div>
-            <div style="display: flex;  ">
-                <el-avatar :size="50" style="margin: auto 5px;" />
+            <!-- <div style="display: flex;  ">
+
                 <el-button style="margin: auto 5px;" type="primary" @click="router.push('/Login')">登录</el-button>
                 <el-button style="margin: auto 5px;" @click="router.push('/Register')">注册</el-button>
+            </div> -->
+            <div style="display: flex;">
+                <el-avatar :size="50" style="margin: auto 5px;" />
+                {{ username }}
             </div>
         </div>
 
@@ -23,7 +27,9 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import router from './router';
+import { reactive } from 'vue';
 
+const username = reactive('nihao');
 </script>
 <style>
 body {

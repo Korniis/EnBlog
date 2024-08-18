@@ -3,6 +3,7 @@ using EBlog.Domain.DTO;
 using EBlog.Domain.Entities;
 using EBlog.IBaseService;
 using EBlog.Utility;
+using EBlog.WebApi.Attributes;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +25,7 @@ namespace EBlog.WebApi.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        [NotCheckJwtVersion]
         public async Task<ActionResult<ApiResult>> GetArticleTypes()
         {
             Console.WriteLine(this.User);
@@ -39,7 +40,7 @@ namespace EBlog.WebApi.Controllers
             {
                 typeDTOs.Add(mapper.Map<ArticleTypeDTO>(a));
             }
-            return ApiResultHelper.Success(typeDTOs);
+            return ApiResultHelper.Success(typeDTOs.Select(c => new {c.Id,c.TypeName}));
         }
         [HttpPost]
         public async Task<ActionResult<ApiResult>> CreateArticleType( string typeName)

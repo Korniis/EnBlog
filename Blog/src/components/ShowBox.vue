@@ -62,10 +62,11 @@ let propsData = defineProps(['imgsrc', "psgid"])
 }
 
 .article-content {
-  padding: 0 40px;
+  padding: 0 0px;
   display: flex;
   width: 57%;
   flex-direction: column;
+  text-align: center;
 }
 
 .img-content {
