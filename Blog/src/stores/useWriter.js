@@ -41,6 +41,7 @@ export const useWriter = defineStore("writer", {
                 else if (res.data.code == 500) {
                     ElMessage.error(res.data.message)
                 }
+                
             }
             ).catch(error => {
                 ElMessage.error("提交失败，标题，类型，文章不能为空");

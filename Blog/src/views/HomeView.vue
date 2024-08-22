@@ -17,7 +17,7 @@
 
                     <div class="bodyclearfix">
                         <div class="boxL">
-                            <div class=boxLcontent>
+                            <!-- <div class=boxLcontent>
                                 <div class=iscenter>
                                     <div class=imgcard>
                                         <img src="../../public/avator/avator.png">
@@ -47,7 +47,31 @@
                                     <span>Follow Me</span>
                                 </el-button>
 
-                            </div>
+                            </div> -->
+
+
+                            <el-card class="webdatashow">
+                                <div class="card-content">
+                                    <div class="data-block">
+                                        <span class="data-title">今日人数</span>
+                                        <span class="data-value">{{ userstore.viewdata.viewCount }}</span>
+                                    </div>
+                                    <div class="data-block">
+                                        <span class="data-title">文章数量</span>
+                                        <span class="data-value">{{userstore.viewdata.articleCount}}</span>
+                                    </div>
+                                    <div class="data-block">
+                                        <span class="data-title">种类数量</span>
+                                        <span class="data-value">{{userstore.viewdata.typeCount}}</span>
+                                    </div>
+                                    <div class="data-block">
+                                        <span class="data-title">用户数量</span>
+                                        <span class="data-value">{{ userstore.viewdata.userCount }}</span>
+                                    </div>
+                                </div>
+                            </el-card>
+
+
                             <div class="boxLcontent" style="margin-top: 20px;">
                                 jaasfasf
                             </div>
@@ -55,8 +79,9 @@
 
                         </div>
                         <div class="boxR">
-                            <div v-infinite-scroll="loadmore"   :infinite-scroll-disabled=pageData.isStop infinite-scroll-immediate=false class="boxRcontent">
-                                <div  style="overflow: auto" v-for="item in pageData.psgArt" :key="item">
+                            <div v-infinite-scroll="loadmore" :infinite-scroll-disabled=pageData.isStop
+                                infinite-scroll-immediate=false class="boxRcontent">
+                                <div style="overflow: auto" v-for="item in pageData.psgArt" :key="item">
                                     <show-box :psgid="item.id" imgsrc="../../public/artimg/image.png">
                                         <template #article-title>
                                             {{ item.title }}
@@ -87,7 +112,7 @@
 <script setup>
 import { computed, onMounted, reactive } from 'vue';
 import ShowBox from '../components/ShowBox.vue';
-import { useUser } from '@/stores/counter';
+import { useUser } from '@/stores/useUser';
 import { storeToRefs } from 'pinia';
 
 import axios from '@/api/index';
@@ -95,24 +120,18 @@ import axios from '@/api/index';
 import { dataType } from 'element-plus/es/components/table-v2/src/common';
 import { ElMessage } from 'element-plus';
 
-const user_store = useUser()
-const {
-    psgCoutNum,
-    psgTagNum,
-    psgSortNum,
-} = storeToRefs(user_store)
+const userstore = useUser()
+
 let pageData = reactive({
-    psgCoutNum: user_store.psgCoutNum,
-    psgTagNum: user_store.psgTagNum,
-    psgSortNum: user_store.psgSortNum,
+
     psgArt: [], // 存储文章列表
-    pageIndex: 1 ,// 当前页码
-    isStop:false
+    pageIndex: 1,// 当前页码
+    isStop: false
 
 });
 
 
-const loadmore = ()=>{
+const loadmore = () => {
 
     axios.get(`/api/MainView/GetArticle/${pageData.pageIndex}`)
         .then(res => {
@@ -123,7 +142,7 @@ const loadmore = ()=>{
                 pageData.pageIndex += 1;
             } else {
                 ElMessage.error("没有更多数据了");
-                pageData.isStop=true;
+                pageData.isStop = true;
             }
         })
         .catch(err => {
@@ -143,6 +162,7 @@ onMounted(() => {
     }).catch(err => {
         console.log(err);
     })
+    userstore.getWebData()
 
 })
 

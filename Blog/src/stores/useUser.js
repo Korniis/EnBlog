@@ -10,6 +10,13 @@ export const useUser = defineStore('user', {
       userid: "",
       username: ""
     },
+    viewdata: {
+
+      viewCount: '',
+      articleCount: '',
+      typeCount: '',
+      userCount: '',
+    },
 
   }),
   actions: {
@@ -59,24 +66,40 @@ export const useUser = defineStore('user', {
       })
     },
     async checkEmailCheck(emailData) {
-      console.log(emailData)
-      axios.post('/api/User/Register', {
-        userName: emailData.name,
-        userPwd: emailData.passWord,
-        emailAddress: emailData.email,
-        code: emailData.vildcode
+      try {
+        console.log(emailData)
+        axios.post('/api/User/Register', {
+          userName: emailData.name,
+          userPwd: emailData.passWord,
+          emailAddress: emailData.email,
+          code: emailData.vildcode
 
 
-      }).then(res => {
-        if (res.data.code == 200) {
-          ElMessage.success('注册成功请返回登录');
+        }).then(res => {
+          if (res.data.code == 200) {
+            ElMessage.success('注册成功请返回登录');
+            return true
+
+          }
+          else {
+            ElMessage.error(res.data.message);
+          }
+        })
+      } catch {
+
+      }
+    },
+    getWebData() {
+      axios.get("api/MainView/UpWebData").then(res => {
+
+        this.viewdata = res.data.data;
 
 
-        }
-        else {
-          ElMessage.error(res.data.message);
-        }
+        console.log(this.viewdata);
+      }).catch(error => {
+        ElMessage.error(error.message);
       })
+
     }
   }
 

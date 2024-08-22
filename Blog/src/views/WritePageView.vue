@@ -49,9 +49,9 @@ const getType = () => {
 
     axios.get('/api/ArticleType/GetArticleTypes').then(res => {
         textType.value = res.data.data;
-    }) .catch(error => {
-            ElMessage.error('请求失败');
-        });
+    }).catch(error => {
+        ElMessage.error('请求失败');
+    });
 
 }
 

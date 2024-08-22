@@ -8,28 +8,59 @@
 
                 <h2 class="style_h2">EnBoWer</h2>
             </div>
-            <!-- <div style="display: flex;  ">
+            <div v-if="!isLogin" style="display: flex;  ">
+
 
                 <el-button style="margin: auto 5px;" type="primary" @click="router.push('/Login')">登录</el-button>
                 <el-button style="margin: auto 5px;" @click="router.push('/Register')">注册</el-button>
-            </div> -->
-            <div style="display: flex;">
+            </div>
+            <div v-if="isLogin" style="display: flex;">
                 <el-avatar :size="50" style="margin: auto 5px;" />
                 {{ username }}
             </div>
         </div>
 
     </el-header>
-    <div class="laymain">
+    <div id ="App" class="laymain">
         <RouterView></RouterView>
+
     </div>
 </template>
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import router from './router';
-import { reactive } from 'vue';
+import router from '@/router';
+import { onMounted, onUnmounted, reactive, ref } from 'vue';
+import axios from 'axios';
 
-const username = reactive('nihao');
+const isLogin = ref(false);
+const username = ref("sad");
+const viewCount =ref("");
+const checkLogin = () => {
+    let token = localStorage.getItem("Elog_jwtToken");
+    console.log("Token:", token); // 打印令牌
+    if (token) {
+        isLogin.value = true;
+    } else {
+        isLogin.value = false;
+    }
+    console.log("isLogin.value:", isLogin.value); // 打印登录状态
+}
+const UpWebData =async ()=>{
+
+    axios.get("/api/MainView/UpWebData").then(
+        res=>{
+
+            viewCount.value=res.data+1
+        }
+    )
+
+}
+
+onMounted(() => {
+
+    checkLogin();
+    UpWebData();
+})
 </script>
 <style>
 body {

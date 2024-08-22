@@ -14,6 +14,7 @@ namespace EBlog.Domain
     {
         public DbSet<Article> Articles { get; set; }
         public DbSet<ArticleType> ArticleTypes { get; set; }
+        public DbSet<WebData> WebDatas { get; set; }
         public UserDbContext(DbContextOptions<UserDbContext> options)
         : base(options)
         {

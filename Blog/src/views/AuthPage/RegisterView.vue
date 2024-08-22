@@ -24,9 +24,10 @@
         </el-form-item> -->
         <el-form-item label="邮箱地址:" prop="email" style="">
           <el-input v-model="ruleForm.email" placeholder="请输入" style="width: 290px;" />
+          <el-button style="margin-left: auto;" type="primary" :disabled="isCoolingDown" @click="validateAndSendCode">
+            {{ isCoolingDown ? `冷却中(${cooldownTime}s)` : '发送验证码' }}
+          </el-button>
 
-          <el-button style="margin-left: auto; " type="primary" @click="validateAndSendCode(ruleFormRef)">
-            发送验证码</el-button>
         </el-form-item>
         <el-form-item label="验证码:" prop="vildcode" style="">
           <el-input v-model="ruleForm.vildcode" placeholder="请输入" />
@@ -52,7 +53,7 @@
 
 import { ElMessage } from 'element-plus';
 import { ref, reactive } from 'vue'
-import useUser from '@/stores/counter';
+import useUser from '@/stores/useUser';
 import router from '@/router';
 const ruleFormRef = ref(null)   // 注意：一定要定义 form 表单中 ref 的 ruleFormRef 的值，否则会一直报错;
 
@@ -64,8 +65,9 @@ const ruleForm = reactive({
   agree: '',
   vildcode: ''
 })
-
-
+const isCoolingDown = ref(false);
+const cooldownTime = ref(60);
+let cooldownInterval = null;
 // 重置的操作;
 const resetForm = (val) => {
   if (!val) return
@@ -199,12 +201,23 @@ const rules = ref({
 })
 
 const validateAndSendCode = async () => {
-
   await ruleFormRef.value.validateField('email');
   await ruleFormRef.value.validateField('name');
   await ruleFormRef.value.validateField('passWord');
+  startCooldown();
 
   await useStore.sendEmailCheck(ruleForm);
+};
+const startCooldown = () => {
+  isCoolingDown.value = true;
+  cooldownTime.value = 60;
+  cooldownInterval = setInterval(() => {
+    cooldownTime.value -= 1;
+    if (cooldownTime.value <= 0) {
+      clearInterval(cooldownInterval);
+      isCoolingDown.value = false;
+    }
+  }, 1000);
 };
 // 此时是：提交表单的操作;
 const submitForm = async () => {
@@ -215,12 +228,16 @@ const submitForm = async () => {
 
     if (valid) {
       await useStore.checkEmailCheck(ruleForm);  // 异步操作
-      router.push('/Login');  // 路由跳转
+      await router.push('/Login');
+      location.reload();
+
+      // 路由跳转
+
     } else {
       ElMessage.error('Error submit!');
     }
   } catch (error) {
-    ElMessage.error('Validation failed or something went wrong!');
+    ElMessage.error('验证有误!');
   }
 };
 

@@ -1,10 +1,10 @@
-﻿using EBlog.Domain.Entities;
+﻿using EBlog.Domain;
+using EBlog.Domain.Entities;
 using EBlog.IBaseService;
 using EBlog.Utility;
 using EBlog.WebApi.Attributes;
 using EBlog.WebApi.Helper;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,9 +12,10 @@ using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using System.Net.Mail;
 using System.Security.Claims;
 using System.Text;
+using StackExchange.Redis;
+
 using System.Text.Json;
 namespace EBlog.WebApi.Controllers
 {
@@ -26,17 +27,21 @@ namespace EBlog.WebApi.Controllers
         private readonly IUserService _userService;
         private readonly UserManager<User> _userManager;
         private readonly IDistributedCache _distributedCache;
-        public AuthorizeController(IDistributedCache distributedCache, IOptionsSnapshot<JWTOptions> settings, IUserService userService, UserManager<User> userManager)
+        private readonly IDatabase _redisDatabase;
+
+        public AuthorizeController(IOptionsSnapshot<JWTOptions> settings, IDistributedCache distributedCache, IUserService userService, UserManager<User> userManager, UserDbContext userDbContext, IDatabase redisDatabase)
         {
             _settings = settings;
             _userService = userService;
             _userManager = userManager;
             _distributedCache = distributedCache;
+            _redisDatabase = redisDatabase;
         }
         [HttpPost]
         [NotCheckJwtVersion]
         public async Task<ActionResult<ApiResult>> Login(CheckRequestInfo info)
         {
+            // await   _distributedCache.GetAsync("")
             User user = await _userManager.Users.SingleOrDefaultAsync(x => x.UserName == info.userName);
             if (user == null)
             {
@@ -108,13 +113,11 @@ namespace EBlog.WebApi.Controllers
                 user.JwtVersion = 0;
                 await _userManager.RemovePasswordAsync(user);
                 await _userManager.AddPasswordAsync(user, password);
-
                 b = await _userManager.UpdateAsync(user);
                 if (!b.Succeeded)
                 {
-                    return ApiResultHelper.Error("请重试");
+                    return ApiResultHelper.Error(b.Errors.First().Description);
                 }
-
             }
             else
             {
@@ -125,11 +128,7 @@ namespace EBlog.WebApi.Controllers
                     JwtVersion = 0
                 };
                 b = await _userManager.CreateAsync(user, password);
-
-
             }
-
-
             if (!b.Succeeded)
             {
                 var customErrors = b.Errors.Select(e =>
@@ -149,31 +148,19 @@ namespace EBlog.WebApi.Controllers
                 return ApiResultHelper.Error($"创建用户失败" + errors);
             }
             await _userManager.AddToRoleAsync(user, "Normal");
-
-
             string confirmcode = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-
-
             var isSend = true;//await SMTPHelper.UseSmtpAsync(user.Email, "注册码", confirmcode);
 
-            await _distributedCache.SetStringAsync($"reg_{user.Email}", JsonSerializer.Serialize(confirmcode), new DistributedCacheEntryOptions()
-            {
-                AbsoluteExpiration = DateTimeOffset.UtcNow.AddMinutes(5)
-            });
+            await _redisDatabase.StringSetAsync($"EBlog_reg_{user.Email}", confirmcode, TimeSpan.FromMinutes(3)); 
             if (isSend)
             {
                 return ApiResultHelper.Success("创建成功");
             }
             else
             {
-
                 return ApiResultHelper.Error("请重试");
             }
-
-
-
         }
-
         [HttpGet]
         [Authorize]
         public async Task<ActionResult<ApiResult>> SendResetToken()
@@ -188,18 +175,14 @@ namespace EBlog.WebApi.Controllers
             {
                 return ApiResultHelper.Error("发送失败");
             }
-
-
             var token = await _userManager.GeneratePasswordResetTokenAsync(Ruser);
+
             // 发送信息
-
             // SMSHelper.UseSMS("18353146519", token);
-
             await _distributedCache.SetStringAsync($"sms_{Ruser.Id}", JsonSerializer.Serialize(token), new DistributedCacheEntryOptions()
             {
                 AbsoluteExpiration = DateTimeOffset.UtcNow.AddMinutes(5)
             });
-
             return ApiResultHelper.Success(token);
         }
     }

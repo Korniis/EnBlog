@@ -40,9 +40,16 @@ const router = createRouter({
 
 router.beforeEach((to, from) => {
   const token = localStorage.getItem("Elog_jwtToken");
-  if (!token && to.path !== "/Login" && to.path !== "/" && to.path !== "/Register") {
-  ElMessage.error("请登录");
 
+  // 允许访问的路径数组
+  const allowedPaths = ['/', '/Login', '/Register'];
+
+  // 允许访问的路径的正则表达式，包含带参数的路径
+  const allowedPathWithParams = /^\/ContentPage\/\d+$/;
+
+  // 检查是否匹配允许访问的路径
+  if (!token && !allowedPaths.includes(to.path) && !allowedPathWithParams.test(to.path)) {
+    ElMessage.error("请登录");
     return "/Login";
   }
 })

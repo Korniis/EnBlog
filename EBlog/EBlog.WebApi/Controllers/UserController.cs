@@ -14,6 +14,7 @@ using System.Net.WebSockets;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
+using Tea.Utils;
 namespace EBlog.WebApi.Controllers
 {
     [Route("api/[controller]/[action]")]
@@ -26,13 +27,14 @@ namespace EBlog.WebApi.Controllers
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<Domain.Entities.Role> _roleManager;
         private readonly IDatabase redisdb;
-        public UserController(IUserService userService, IMapper mapper, IDistributedCache distributedCache, UserManager<User> userManager, RoleManager<Domain.Entities.Role> roleManager)
+        public UserController(IUserService userService, IMapper mapper, IDistributedCache distributedCache, UserManager<User> userManager, RoleManager<Domain.Entities.Role> roleManager, IDatabase redisdb)
         {
             _userService = userService;
             _mapper = mapper;
-            _distributedCache = distributedCache;
+
             _userManager = userManager;
             _roleManager = roleManager;
+            this.redisdb = redisdb;
         }
         [HttpGet]
         public async Task<ActionResult<ApiResult>> GetUsers()
@@ -91,14 +93,14 @@ namespace EBlog.WebApi.Controllers
             {
                 return ApiResultHelper.Error("验证错误请重试");
             }
-            
+
             //  var storedCode = await _distributedCache.GetAsync($"reg_{user.Email}");
-            var storedCode = JsonSerializer.Deserialize<string>(await _distributedCache.GetAsync($"reg_{user.Email}"));
+            var storedCode = (await redisdb.StringGetAsync($"EBlog_reg_{user.Email}")).ToSafeString();
             // var storedCode = await redisdb.HashGetAsync($"reg_{user.Email}", "data");
-            /*    if (code != storedCode)
-                  {
-                      return ApiResultHelper.Error("验证错误或超时请重试");
-                  }*/
+            if (code != storedCode)
+            {
+                return ApiResultHelper.Error("验证错误或超时请重试");
+            }
             IdentityResult emailConfirm = await _userManager.ConfirmEmailAsync(user, code);
             if (emailConfirm.Succeeded)
             {

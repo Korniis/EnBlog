@@ -30,7 +30,7 @@
 import router from '@/router';
 import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
-import useUser from '@/stores/counter';
+import useUser from '@/stores/useUser';
 const loginFormRef = ref(null);
 
 // 表单对象

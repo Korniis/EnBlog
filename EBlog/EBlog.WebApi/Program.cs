@@ -15,6 +15,9 @@ using EBlog.BaseService;
 using EBlog.Utility.DTO;
 using Microsoft.AspNetCore.Mvc;
 using EBlog.WebApi.Fliters;
+using StackExchange.Redis;
+using Microsoft.Extensions.Options;
+using EBlog.WebApi.Hosted;
 namespace EBlog.WebApi
 {
     public class Program
@@ -46,13 +49,12 @@ namespace EBlog.WebApi
                 requirement[scheme] = new List<string>();
                 c.AddSecurityRequirement(requirement);
             });
-
             builder.Services.AddDbContext<UserDbContext>(opt =>
             {
                 string connStr = builder.Configuration.GetConnectionString("Default");
                 opt.UseMySql(connStr, new MySqlServerVersion(new Version(8, 6, 20)));
             });
-            builder.Services.AddCustomRedis();
+            builder.Services.AddCustomRedis(builder.Configuration);
             builder.Services.AddCustomIOC();
             builder.Services.Configure<MvcOptions>(opt => {
 
@@ -66,6 +68,8 @@ namespace EBlog.WebApi
             builder.Services.AddCors(options =>
                 options.AddDefaultPolicy(builder => builder.WithOrigins(urls)
                 .AllowAnyMethod().AllowAnyHeader().AllowCredentials()));
+            builder.Services.AddHostedService<ExplortBgService>();
+
             var app = builder.Build();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -83,14 +87,35 @@ namespace EBlog.WebApi
     }
     public static class IOCExtend
     {
-        public static IServiceCollection AddCustomRedis( this IServiceCollection services)
+        public static IServiceCollection AddCustomRedis( this IServiceCollection services ,IConfiguration Configuration)
         {
+            var redisConfiguration = Configuration.GetSection("Redis:ConnectionString").Value;
+            var instanceName = Configuration.GetSection("Redis:InstanceName").Value;
+
+            // 配置 StackExchange.Redis 缓存
             services.AddStackExchangeRedisCache(opt =>
             {
-                opt.Configuration = "127.0.0.1";
-                opt.InstanceName = "blog_";
+                opt.Configuration = redisConfiguration;
+                opt.InstanceName = instanceName;
             });
-           return services;
+
+            // 配置 IConnectionMultiplexer
+            services.AddSingleton<IConnectionMultiplexer>(sp =>
+            {
+                var options = ConfigurationOptions.Parse(redisConfiguration);
+                // 根据需要设置其他配置选项
+                // options.Password = "your_redis_password"; // 如果需要密码
+                return ConnectionMultiplexer.Connect(options);
+            });
+
+            // 配置 IDatabase
+            services.AddTransient<IDatabase>(sp =>
+            {
+                var connectionMultiplexer = sp.GetRequiredService<IConnectionMultiplexer>();
+                return connectionMultiplexer.GetDatabase();
+            });
+
+            return services;
         }
         public static IServiceCollection AddCustomIOC(this IServiceCollection services)
         {   //仓储层
@@ -122,10 +147,10 @@ namespace EBlog.WebApi
                 options.Tokens.EmailConfirmationTokenProvider = TokenOptions.DefaultEmailProvider; //注册邮箱验证
             });
 
-            var idBuilder = new IdentityBuilder(typeof(User), typeof(Role), services);
+            var idBuilder = new IdentityBuilder(typeof(User), typeof(Domain.Entities.Role), services);
             idBuilder.AddEntityFrameworkStores<UserDbContext>()
                 .AddDefaultTokenProviders()
-                .AddRoleManager<RoleManager<Role>>()
+                .AddRoleManager<RoleManager<Domain.Entities.Role>>()
                 .AddUserManager<UserManager<User>>();
              services.Configure<JWTOptions>(Configuration.GetSection("JWT"));
             var jwtOpt = Configuration.GetSection("JWT");
