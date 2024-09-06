@@ -70,12 +70,11 @@ const articleData = reactive({
 
 
 });
-const writeStore =   useWriter();
+const writeStore = useWriter();
 
-const CreateArticle =  async (article) => {
-
-  await writeStore.CreateArticle(article);
-
+const CreateArticle = async (article) => {
+    await writeStore.CreateArticle(article);
+    router.push("/")
 
 
 }
@@ -107,30 +106,30 @@ const onUploadImg = async (files, callback) => {
         return axios.defaults.baseURL + "/images/" + item.data.data.fileName
     }))
 };
-    // for (let i in files) {
-    //     if (files[i].size > 1024 * 1024 * 5) {
-    //         ElMessage.error("图片请小于5MB")
-    //         return;
+// for (let i in files) {
+//     if (files[i].size > 1024 * 1024 * 5) {
+//         ElMessage.error("图片请小于5MB")
+//         return;
 
-    //     }
-    //     const formData = new FormData();
-    //     formData.append('file', files[i])
-    //     axios.post("https://sm.ms/api/v2/upload", {
-    //         Header: {
-    //             "Content-Type": "multipart/form-data",
-    //             "Authorization": "WodY6dUwybVllRGoso6aobrxijWobdjm",
-    //         },
-    //         smfile: formData
+//     }
+//     const formData = new FormData();
+//     formData.append('file', files[i])
+//     axios.post("https://sm.ms/api/v2/upload", {
+//         Header: {
+//             "Content-Type": "multipart/form-data",
+//             "Authorization": "WodY6dUwybVllRGoso6aobrxijWobdjm",
+//         },
+//         smfile: formData
 
-    //     }).then(
-    //         res => {
+//     }).then(
+//         res => {
 
-    //             insertImage({ url: res.data })
+//             insertImage({ url: res.data })
 
-    //         }
-    //     )
+//         }
+//     )
 
-    // }
+// }
 
 
 

@@ -17,6 +17,34 @@
       "PackagePath": "staticwebassets\\images\\29_avatar.png"
     },
     {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\2f736579-d09c-42ec-bb6b-125d0573625d_img.png",
+      "PackagePath": "staticwebassets\\images\\2f736579-d09c-42ec-bb6b-125d0573625d_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\407f9d56-40e8-4d0e-bc9b-014833f7117b_img.png",
+      "PackagePath": "staticwebassets\\images\\407f9d56-40e8-4d0e-bc9b-014833f7117b_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\4534e163-b9f4-467c-98b4-ff8e997f912d_img.png",
+      "PackagePath": "staticwebassets\\images\\4534e163-b9f4-467c-98b4-ff8e997f912d_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\5cd303fc-ed29-4fd1-8f51-bd54cabd8c20_img.png",
+      "PackagePath": "staticwebassets\\images\\5cd303fc-ed29-4fd1-8f51-bd54cabd8c20_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\69cfdca5-05de-4450-9e91-ca3d07d8738b_img.png",
+      "PackagePath": "staticwebassets\\images\\69cfdca5-05de-4450-9e91-ca3d07d8738b_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\6fbfecd5-3d56-4802-9a5d-2d88ff377237_img.png",
+      "PackagePath": "staticwebassets\\images\\6fbfecd5-3d56-4802-9a5d-2d88ff377237_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\8b4001dc-ab87-42bb-893c-ccef033d152c_img.png",
+      "PackagePath": "staticwebassets\\images\\8b4001dc-ab87-42bb-893c-ccef033d152c_img.png"
+    },
+    {
       "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\99daafe4-1894-4da5-8e1e-9ca9d4bd5d01_img.png",
       "PackagePath": "staticwebassets\\images\\99daafe4-1894-4da5-8e1e-9ca9d4bd5d01_img.png"
     },
@@ -25,16 +53,68 @@
       "PackagePath": "staticwebassets\\images\\avatar_test.jpg"
     },
     {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\b40fc276-a169-4e79-936a-2d126d82d87d_img.png",
+      "PackagePath": "staticwebassets\\images\\b40fc276-a169-4e79-936a-2d126d82d87d_img.png"
+    },
+    {
       "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\b924fcf8-fd23-4f43-9b9f-e33f1f668661_img.png",
       "PackagePath": "staticwebassets\\images\\b924fcf8-fd23-4f43-9b9f-e33f1f668661_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\c4422f2d-bcf7-47a5-accc-5ac5ceccdb14_img.png",
+      "PackagePath": "staticwebassets\\images\\c4422f2d-bcf7-47a5-accc-5ac5ceccdb14_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\c7030009-74b7-41c0-8696-e87bfcd8cedc_img.png",
+      "PackagePath": "staticwebassets\\images\\c7030009-74b7-41c0-8696-e87bfcd8cedc_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\cc9a6f10-5edb-46f3-a4a7-e479c8e79fa1_img.png",
+      "PackagePath": "staticwebassets\\images\\cc9a6f10-5edb-46f3-a4a7-e479c8e79fa1_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\da878369-cf47-4857-8156-de71b5f65baf_img.png",
+      "PackagePath": "staticwebassets\\images\\da878369-cf47-4857-8156-de71b5f65baf_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\df91845c-f3e5-4d33-9e3b-4767cdd39554_img.png",
+      "PackagePath": "staticwebassets\\images\\df91845c-f3e5-4d33-9e3b-4767cdd39554_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\e0320ea1-1716-42fa-8732-87467bf2e325_img.png",
+      "PackagePath": "staticwebassets\\images\\e0320ea1-1716-42fa-8732-87467bf2e325_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\e0c1e9fd-10ff-49ed-8062-098c66680219_img.png",
+      "PackagePath": "staticwebassets\\images\\e0c1e9fd-10ff-49ed-8062-098c66680219_img.png"
     },
     {
       "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\e88efa93-12a0-4c8d-b81a-43f3ae0e0bcb_img.png",
       "PackagePath": "staticwebassets\\images\\e88efa93-12a0-4c8d-b81a-43f3ae0e0bcb_img.png"
     },
     {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\eb8e08d3-3664-443b-ac00-21fddcbef95e_img.png",
+      "PackagePath": "staticwebassets\\images\\eb8e08d3-3664-443b-ac00-21fddcbef95e_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\f04c1b5c-f108-4190-8693-a5bde5a5b85e_img.png",
+      "PackagePath": "staticwebassets\\images\\f04c1b5c-f108-4190-8693-a5bde5a5b85e_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\f23c755d-738d-4fe5-8805-69d3d1e79c77_img.png",
+      "PackagePath": "staticwebassets\\images\\f23c755d-738d-4fe5-8805-69d3d1e79c77_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\f2b5b39a-c7a2-4e42-8775-f573fd8bac6f_img.png",
+      "PackagePath": "staticwebassets\\images\\f2b5b39a-c7a2-4e42-8775-f573fd8bac6f_img.png"
+    },
+    {
       "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\f7f88481-5aa4-4bee-a990-816679cb957f_img.png",
       "PackagePath": "staticwebassets\\images\\f7f88481-5aa4-4bee-a990-816679cb957f_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\fb5370b8-4ab5-41e7-9d24-9619c0085feb_img.png",
+      "PackagePath": "staticwebassets\\images\\fb5370b8-4ab5-41e7-9d24-9619c0085feb_img.png"
     },
     {
       "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\fe6cedce-8da8-46da-8537-69a906b8c6c6_img.png",

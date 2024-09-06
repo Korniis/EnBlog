@@ -28,6 +28,7 @@ export const useWriter = defineStore("writer", {
                 return config
             })
             this.writer = article;
+            //debugger
             axios.post('/api/Article/CreateArticle', {
 
                 title: article.title,
@@ -51,6 +52,8 @@ export const useWriter = defineStore("writer", {
             )
 
         },
+
+
         UpdateArticle(article) {
             axios.interceptors.request.use(config => {
                 //获取Token

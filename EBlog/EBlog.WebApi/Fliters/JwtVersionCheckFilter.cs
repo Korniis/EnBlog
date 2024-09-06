@@ -61,6 +61,7 @@ namespace EBlog.WebApi.Fliters
                 }
 
                 await next();
+                return ;
             }
             else //缓存为空
             {
