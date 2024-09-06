@@ -49,7 +49,7 @@ namespace EBlog.WebApi.Controllers
             }
             if (await _userManager.IsLockedOutAsync(user))
             {
-                return ApiResultHelper.Error($"用户{info.userName}被冻结");
+                return ApiResultHelper.Error($"用户{info.userName}被冻结，请稍后重试");
             }
             bool result = await _userManager.CheckPasswordAsync(user, info.userPwd);
             if (result)
@@ -91,7 +91,7 @@ namespace EBlog.WebApi.Controllers
                 //记录登录次数
                 await _userManager.AccessFailedAsync(user);
                 int v = await _userManager.GetAccessFailedCountAsync(user);
-                return ApiResultHelper.Error($"用户名或密码错误再输入{5 - v}次锁定");
+                return ApiResultHelper.Error($"用户名或密码错误再输入{5 -v}次锁定");
             }
         }
         [HttpPost]
@@ -162,28 +162,45 @@ namespace EBlog.WebApi.Controllers
             }
         }
         [HttpGet]
-        [Authorize]
-        public async Task<ActionResult<ApiResult>> SendResetToken()
+        [NotCheckJwtVersion]
+        public async Task<ActionResult<ApiResult>> SendResetToken(string username ,string email )
         {
-            Claim? UserId = this.User.FindFirst(ClaimTypes.NameIdentifier);
-            if (UserId == null)
+            var change =await _userManager.FindByNameAsync(username);
+            if (change == null)
             {
-                return ApiResultHelper.Error("请登录");
+                return ApiResultHelper.Error("请注册");
             }
-            var Ruser = await _userManager.FindByIdAsync(UserId.Value);
-            if (Ruser == null)
+            if(change.Email!=email)
             {
-                return ApiResultHelper.Error("发送失败");
-            }
-            var token = await _userManager.GeneratePasswordResetTokenAsync(Ruser);
 
+                return ApiResultHelper.Error("邮箱错误");
+            }
+            var token = await _userManager.GeneratePasswordResetTokenAsync(change);
+            await  _redisDatabase.StringSetAsync($"EBlog_reset_{change.UserName}", token,TimeSpan.FromMinutes(5));
             // 发送信息
-            // SMSHelper.UseSMS("18353146519", token);
-            await _distributedCache.SetStringAsync($"sms_{Ruser.Id}", JsonSerializer.Serialize(token), new DistributedCacheEntryOptions()
-            {
-                AbsoluteExpiration = DateTimeOffset.UtcNow.AddMinutes(5)
-            });
-            return ApiResultHelper.Success(token);
+            //SMTPHelper.UseSmtpAsync(change.Email, "code",token);
+            return ApiResultHelper.Success("请查看邮箱");
+
+            /*  Claim? UserId = this.User.FindFirst(ClaimTypes.NameIdentifier);
+              if (UserId == null)
+              {
+                  return ApiResultHelper.Error("请登录");
+              }*/
+
+            /*    var Ruser = await _userManager.FindByIdAsync(UserId.Value);
+                if (Ruser == null)
+                {
+                    return ApiResultHelper.Error("发送失败");
+                }
+                var token = await _userManager.GeneratePasswordResetTokenAsync(Ruser);
+
+                // 发送信息
+                // SMSHelper.UseSMS("18353146519", token);
+                await _distributedCache.SetStringAsync($"sms_{Ruser.Id}", JsonSerializer.Serialize(token), new DistributedCacheEntryOptions()
+                {
+                    AbsoluteExpiration = DateTimeOffset.UtcNow.AddMinutes(5)
+                });
+                return ApiResultHelper.Success(token);*/
         }
     }
 }

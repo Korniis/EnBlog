@@ -38,14 +38,14 @@ namespace EBlog.WebApi.Fliters
             var claimJwtVersion = context.HttpContext.User.FindFirst("JwtVersion");
             if (claimJwtVersion is null)
             {
-                context.Result = new ObjectResult("没有找到JwtVersion的内容") { StatusCode = 400 };
+                context.Result = new ObjectResult("没有找到JwtVersion的内容") { StatusCode = 401 };
                 return;
             }
             Claim? UserId = context.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
 
             if (UserId is null)
             {
-                context.Result = new ObjectResult("没有找到JwtVersion的内容") { StatusCode = 400 };
+                context.Result = new ObjectResult("没有找到JwtVersion的内容") { StatusCode = 401 };
                 return;
             }
             long jwtVersionFromClient = long.Parse(claimJwtVersion.Value);
@@ -56,7 +56,7 @@ namespace EBlog.WebApi.Fliters
 
                 if (jwtVersion > jwtVersionFromClient)
                 {
-                    context.Result = new ObjectResult("Jwt已过时") { StatusCode = 400 };
+                    context.Result = new ObjectResult("Jwt已过时") { StatusCode = 401 };
                     return;
                 }
 
@@ -67,7 +67,7 @@ namespace EBlog.WebApi.Fliters
                 var user = await _userManager.FindByIdAsync(UserId.Value);
                 if (user is null)
                 {
-                    context.Result = new ObjectResult("数据库中不存在该用户") { StatusCode = 400 };
+                    context.Result = new ObjectResult("数据库中不存在该用户") { StatusCode = 401 };
                     return;
                 }
              
@@ -81,7 +81,7 @@ namespace EBlog.WebApi.Fliters
 
                 if (user.JwtVersion > jwtVersionFromClient)
                 {
-                    context.Result = new ObjectResult("Jwt已过时") { StatusCode = 400 };
+                    context.Result = new ObjectResult("Jwt已过时") { StatusCode = 401 };
                     return;
                 }
             }

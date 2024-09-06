@@ -1,0 +1,4 @@
+<template>
+    setting
+
+</template>

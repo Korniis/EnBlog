@@ -49,40 +49,16 @@
 
                             </div> -->
 
-
-                            <el-card class="webdatashow">
-                                <div class="card-content">
-                                    <div class="data-block">
-                                        <span class="data-title">今日人数</span>
-                                        <span class="data-value">{{ userstore.viewdata.viewCount }}</span>
-                                    </div>
-                                    <div class="data-block">
-                                        <span class="data-title">文章数量</span>
-                                        <span class="data-value">{{userstore.viewdata.articleCount}}</span>
-                                    </div>
-                                    <div class="data-block">
-                                        <span class="data-title">种类数量</span>
-                                        <span class="data-value">{{userstore.viewdata.typeCount}}</span>
-                                    </div>
-                                    <div class="data-block">
-                                        <span class="data-title">用户数量</span>
-                                        <span class="data-value">{{ userstore.viewdata.userCount }}</span>
-                                    </div>
-                                </div>
-                            </el-card>
-
-
-                            <div class="boxLcontent" style="margin-top: 20px;">
-                                jaasfasf
-                            </div>
-
-
+                            <WebData style="border-radius: 20px;"></WebData>
+                            <WeatherCard style="border-radius: 20px;"></WeatherCard>
+                            <TodoInfo style="border-radius: 20px;" :todo="sampleTodo"></TodoInfo>
                         </div>
                         <div class="boxR">
                             <div v-infinite-scroll="loadmore" :infinite-scroll-disabled=pageData.isStop
                                 infinite-scroll-immediate=false class="boxRcontent">
                                 <div style="overflow: auto" v-for="item in pageData.psgArt" :key="item">
-                                    <show-box :psgid="item.id" imgsrc="../../public/artimg/image.png">
+                                    <show-box :psgid="item.id"
+                                        :imgsrc="axios.defaults.baseURL + '/images/' + item.imgSrc">
                                         <template #article-title>
                                             {{ item.title }}
                                         </template>
@@ -107,6 +83,12 @@
             </el-main>
         </el-container>
     </div>
+    <el-affix style=" position: fixed;
+  right: 40px; width: 102px; height: 100px;
+  bottom: 20px; " :offset="120">
+        <el-button type="primary" @click='router.push("/Write")' style="width: 102px; font-size: 40px; height: 100px;"
+            circle size="large" class="custom-button">+</el-button>
+    </el-affix>
 </template>
 
 <script setup>
@@ -119,8 +101,12 @@ import axios from '@/api/index';
 
 import { dataType } from 'element-plus/es/components/table-v2/src/common';
 import { ElMessage } from 'element-plus';
+import WeatherCard from '@/components/WeatherCard.vue';
+import WebData from '@/components/WebData.vue';
+import TodoInfo from '@/components/TodoInfo.vue';
+import router from '@/router';
 
-const userstore = useUser()
+
 
 let pageData = reactive({
 
@@ -129,7 +115,13 @@ let pageData = reactive({
     isStop: false
 
 });
-
+const userstore = useUser();
+const sampleTodo = {
+    title: '编写WPF聊天程序',
+    description: '完成待办事项组件的开发，并进行测试。',
+    dueDate: '2024-09-15',
+    status: '进行中'
+};
 
 const loadmore = () => {
 
@@ -151,10 +143,7 @@ const loadmore = () => {
         });
 }
 
-onMounted(() => {
-
-
-    //头部header变色
+const getPageArticle = () => {
 
     axios.get(`/api/MainView/GetArticle/${0}`).then(res => {
         console.log(res.data)
@@ -162,8 +151,16 @@ onMounted(() => {
     }).catch(err => {
         console.log(err);
     })
-    userstore.getWebData()
 
+
+}
+
+onMounted(() => {
+
+
+    //头部header变色
+    getPageArticle();
+    userstore.getWebData();
 })
 
 </script>

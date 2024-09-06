@@ -81,6 +81,7 @@ namespace EBlog.WebApi
             app.UseHttpsRedirection();
             app.UseAuthentication(); //鉴权
             app.UseAuthorization();
+            app.UseStaticFiles();
             app.MapControllers();
             app.Run();
         }
@@ -141,7 +142,7 @@ namespace EBlog.WebApi
                 options.Password.RequiredLength = 6; //最短长度
                 //锁定
                 options.Lockout.MaxFailedAccessAttempts = 5;//最大登录次数
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);//锁定事件
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(2);//锁定事件
                 //验证
                 options.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultEmailProvider; //密码重置验证
                 options.Tokens.EmailConfirmationTokenProvider = TokenOptions.DefaultEmailProvider; //注册邮箱验证

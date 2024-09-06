@@ -17,6 +17,7 @@ namespace EBlog.Domain.DTO
         public DateTime CreateTime { get; set; }
 
         public string TypeName { get; set; }
+        public string ImgSrc { get; set; }
 
         //指定一个与数据库同名同类型的UserId作外键: 需要在Config再配置
         public string UserName { get; set; }

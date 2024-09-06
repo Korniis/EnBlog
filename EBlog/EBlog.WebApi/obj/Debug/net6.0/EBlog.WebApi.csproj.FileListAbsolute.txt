@@ -143,3 +143,6 @@ D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\obj\Debug\net6.0\refint\EBlog.WebApi.dll
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\obj\Debug\net6.0\EBlog.WebApi.pdb
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\obj\Debug\net6.0\EBlog.WebApi.genruntimeconfig.cache
 D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\obj\Debug\net6.0\ref\EBlog.WebApi.dll
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\EBlog.WebApi.staticwebassets.runtime.json
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\wwwroot\Images\avatar_test.jpg
+D:\JAVA\Demo_OnWork\EBlog\EBlog.WebApi\bin\Debug\net6.0\wwwroot\images\29_avatar.png

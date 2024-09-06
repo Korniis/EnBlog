@@ -8,6 +8,6 @@ namespace EBlog.Utility
 {
     public record CheckRequestInfo(string userName, string userPwd);
     public record CheckEmailInfo(string userName, string userPwd, string emailAddress, string? code);
-    public record CreateArticleInfo(string title, string content, long tid);
+    public record CreateArticleInfo(string title, string content, long tid ,string? ImgSrc);
 
 }

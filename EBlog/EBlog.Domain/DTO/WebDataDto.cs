@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EBlog.Domain.DTO
 {
-    public class WebDataDto
+    public class WebDataDTO
     {
         public long ViewCount { get; set; }
         public long ArticleCount { get; set; }

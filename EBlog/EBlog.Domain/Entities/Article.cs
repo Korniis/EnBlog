@@ -17,6 +17,7 @@ namespace EBlog.Domain.Entities
         public DateTime CreateTime { get; set; }
 
         public long TypeId { get; set; }
+        public string? ImgSrc {  get; set; } 
 
         //指定一个与数据库同名同类型的UserId作外键: 需要在Config再配置
         public long? UserId { get; set; }

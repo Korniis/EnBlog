@@ -31,6 +31,8 @@ namespace EBlog.Utility.DTO
             {
                 opt.MapFrom(src => src.Articles.Select(x => x.Title));
             });
+            base.CreateMap<User, UserInfoDTO>();
+        
         }
     }
 }

@@ -1,0 +1,65 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\06d0b381-ae60-473b-a7ed-c9dbc1bc3983_img.png",
+      "PackagePath": "staticwebassets\\images\\06d0b381-ae60-473b-a7ed-c9dbc1bc3983_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\1503dae3-acc1-470b-8cf8-40366bda5f33_img.png",
+      "PackagePath": "staticwebassets\\images\\1503dae3-acc1-470b-8cf8-40366bda5f33_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\23_avatar.png",
+      "PackagePath": "staticwebassets\\images\\23_avatar.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\29_avatar.png",
+      "PackagePath": "staticwebassets\\images\\29_avatar.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\99daafe4-1894-4da5-8e1e-9ca9d4bd5d01_img.png",
+      "PackagePath": "staticwebassets\\images\\99daafe4-1894-4da5-8e1e-9ca9d4bd5d01_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\avatar_test.jpg",
+      "PackagePath": "staticwebassets\\images\\avatar_test.jpg"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\b924fcf8-fd23-4f43-9b9f-e33f1f668661_img.png",
+      "PackagePath": "staticwebassets\\images\\b924fcf8-fd23-4f43-9b9f-e33f1f668661_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\e88efa93-12a0-4c8d-b81a-43f3ae0e0bcb_img.png",
+      "PackagePath": "staticwebassets\\images\\e88efa93-12a0-4c8d-b81a-43f3ae0e0bcb_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\f7f88481-5aa4-4bee-a990-816679cb957f_img.png",
+      "PackagePath": "staticwebassets\\images\\f7f88481-5aa4-4bee-a990-816679cb957f_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\fe6cedce-8da8-46da-8537-69a906b8c6c6_img.png",
+      "PackagePath": "staticwebassets\\images\\fe6cedce-8da8-46da-8537-69a906b8c6c6_img.png"
+    },
+    {
+      "Id": "D:\\JAVA\\Demo_OnWork\\EBlog\\EBlog.WebApi\\wwwroot\\images\\folder_test.png",
+      "PackagePath": "staticwebassets\\images\\folder_test.png"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.EBlog.WebApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.EBlog.WebApi.props",
+      "PackagePath": "build\\EBlog.WebApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.EBlog.WebApi.props",
+      "PackagePath": "buildMultiTargeting\\EBlog.WebApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.EBlog.WebApi.props",
+      "PackagePath": "buildTransitive\\EBlog.WebApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

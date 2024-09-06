@@ -38,6 +38,16 @@ namespace EBlog.Utility
                 Total = 0,
             };
         }
+        public static ApiResult AuthError(string msg)
+        {
+            return new ApiResult
+            {
+                Code = 401,
+                Data = null,
+                Message = msg,
+                Total = 0,
+            };
+        }
 
 
     }

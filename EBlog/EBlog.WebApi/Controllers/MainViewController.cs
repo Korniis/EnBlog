@@ -37,13 +37,14 @@ namespace EBlog.WebApi.Controllers
 
         [HttpGet]
         [NotCheckJwtVersion]
+        
         public async Task<ApiResult> UpWebData()
-        {
+        {   
             var viewdata = await _redisDatabase.HashGetAllAsync("Eblog_ViewData");
             if (viewdata.IsNullOrEmpty())
             {
 
-                var dto = new WebDataDto
+                var dto = new WebDataDTO
                 {
                     ViewCount = 1,
                     ArticleCount = await _userDbContext.Articles.CountAsync(),
@@ -67,9 +68,9 @@ namespace EBlog.WebApi.Controllers
             else
             {
                 await _redisDatabase.HashIncrementAsync("Eblog_ViewData", "ViewCount");
-                var dto = new WebDataDto
+                var dto = new WebDataDTO
                 {
-                    ViewCount = (long)viewdata.FirstOrDefault(entry => entry.Name == "ViewCount").Value + 1,
+                    ViewCount = (long)viewdata.FirstOrDefault(entry => entry.Name == "ViewCount").Value ,
                     ArticleCount = (long)viewdata.FirstOrDefault(entry => entry.Name == "ArticleCount").Value,
                     TypeCount = (long)viewdata.FirstOrDefault(entry => entry.Name == "TypeCount").Value,
                     UserCount = (long)viewdata.FirstOrDefault(entry => entry.Name == "UserCount").Value

@@ -1,23 +1,31 @@
 import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
+
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import { jwtDecode } from 'jwt-decode'
 export const useUser = defineStore('user', {
 
   state: () => ({
+    isLogin: false,
     user: {
+
       userid: "",
-      username: ""
+      username: "",
+      avatar: "",
+      myDescriptions: "",
+      userName: "",
+      wxAccount: "",
+      phoneNumber: "",
+      email: ""
     },
     viewdata: {
-
       viewCount: '',
       articleCount: '',
       typeCount: '',
       userCount: '',
     },
-
+    persist: true,
   }),
   actions: {
 
@@ -34,12 +42,14 @@ export const useUser = defineStore('user', {
           localStorage.setItem("Elog_jwtToken", jwtPlayLoad);
 
           const decodeJwt = jwtDecode(jwtPlayLoad);
-          this.$state.userid = decodeJwt["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
-          this.$state.username = decodeJwt["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"];
-          return true;
+          this.$state.user.userid = decodeJwt["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
+          this.$state.user.username = decodeJwt["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"];
+          this.$state.user.avatar = decodeJwt["Avatar"];
+          this.$state.isLogin = true;
+          console.log(this.$state);
 
         } else if (res.data.code === 500) {
-          ElMessage.error(res.data.message);
+          await ElMessage.error(res.data.message);
           return false;
         }
 
@@ -97,11 +107,30 @@ export const useUser = defineStore('user', {
 
         console.log(this.viewdata);
       }).catch(error => {
-        ElMessage.error(error.message);
+        ElMessage.error("无法获取信息");
       })
 
+    },
+    async userInfoGet() {
+      let token = localStorage.getItem("Elog_jwtToken");
+
+      if (token) {
+        axios.get("api/User/GetUserByFont", {
+          headers: {
+            "Authorization": `Bearer ${token}`
+          }
+        })
+          .then(res => {
+
+            this.$state.user = res.data;
+          })
+          .catch(error => {
+            ElMessage.error(error.message);
+          });
+      }
     }
   }
+
 
 })
 export default useUser
