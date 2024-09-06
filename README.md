@@ -1,6 +1,6 @@
 全栈博客持续更新中 写的有点烂 本来ddd 但觉得没必要 改成mvc了😓 所以有点乱
 一份拙作   
-后：.netcore6 web api+ EFcore+Identity+AutoMapper+JWT鉴权+中间件+过滤器 
+后：.netcore6 web api+ EFcore+Identity+AutoMapper+JWT鉴权+redis+mysql
 
 
 前： vue3 + vueRouter +Pinia+ md-editor-v3+three+vanta+element-plus+axios
